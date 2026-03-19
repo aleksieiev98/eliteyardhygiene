@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import {
+  ArrowRight,
   BadgeCheck,
   Bone,
   CalendarClock,
@@ -222,29 +223,32 @@ export default function HomePage() {
               for busy homeowners who want a yard that feels fresh, safe, and ready
               to enjoy.
             </p>
-            <div className="pill-row">
-              {trustPills.map((pill) => (
-                <span key={pill} className="trust-pill">
-                  <BadgeCheck size={16} />
-                  {pill}
-                </span>
-              ))}
-            </div>
             <div className="cta-row">
               <Link href="#quote" className="button button-primary">
                 Get a Free Quote
               </Link>
               <Link href="#pricing" className="button button-secondary">
                 View Pricing
+                <ArrowRight size={16} />
               </Link>
             </div>
-            <div className="micro-proof">
-              <span>
-                <Star size={16} fill="currentColor" />
-                Trusted by local dog owners
-              </span>
-              <span>Launch offer: first customers save 25%</span>
-              <span>Text alerts after every visit</span>
+            <div className="hero-proof-stack">
+              <div className="pill-row">
+                {trustPills.map((pill) => (
+                  <span key={pill} className="trust-pill">
+                    <BadgeCheck size={16} />
+                    {pill}
+                  </span>
+                ))}
+              </div>
+              <div className="micro-proof">
+                <span>
+                  <Star size={16} fill="currentColor" />
+                  Trusted by local dog owners
+                </span>
+                <span>Launch offer: first customers save 25%</span>
+                <span>Text alerts after every visit</span>
+              </div>
             </div>
           </div>
 
