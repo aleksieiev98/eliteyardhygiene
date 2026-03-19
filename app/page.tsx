@@ -5,7 +5,6 @@ import {
   Bone,
   CalendarClock,
   Check,
-  CircleDollarSign,
   Dog,
   Facebook,
   Fence,
@@ -15,6 +14,7 @@ import {
   MessageSquareQuote,
   Music2,
   Phone,
+  PictureInPicture2,
   ShieldCheck,
   Sparkles,
   SprayCan,
@@ -23,9 +23,8 @@ import {
   Trees,
 } from "lucide-react";
 import { BeforeAfterCard } from "@/components/before-after-card";
-import { CheckoutButton } from "@/components/checkout-button";
 import { QuoteForm } from "@/components/quote-form";
-import { ScrollEffects } from "@/components/scroll-effects";
+import { getAllPosts } from "@/data/blog-posts";
 
 const trustPills = ["Locally Trusted", "Reliable Weekly Service", "Pet-Friendly"];
 
@@ -81,7 +80,6 @@ const pricing = [
     note: "starting",
     description: "Deep cleanup for overgrown yards or event prep.",
     features: ["Full walkthrough and pickup", "Bagged disposal included", "Perfect for resets"],
-    plan: "one-time-cleanup",
   },
   {
     title: "Weekly Service",
@@ -89,7 +87,6 @@ const pricing = [
     note: "per week",
     description: "The easy way to keep your yard fresh all season long.",
     features: ["Scheduled weekly visit", "Visit notifications", "Most popular recurring plan"],
-    plan: "weekly",
     featured: true,
   },
   {
@@ -98,7 +95,6 @@ const pricing = [
     note: "per week",
     description: "Built for multi-dog homes and high-use backyards.",
     features: ["Two visits each week", "Cleaner yard between visits", "Best for busy households"],
-    plan: "twice-weekly",
   },
 ];
 
@@ -107,7 +103,7 @@ const benefits = [
   "Tools sanitized between every property visit",
   "Gates secured after each cleanup",
   "Friendly, dog-comfortable technicians",
-  "Easy online billing through Stripe",
+  "Simple quote-first booking process",
   "Satisfaction guarantee on every visit",
   "Text or email notifications when service is complete",
   "Locally owned, family-style customer care",
@@ -158,7 +154,7 @@ const faqs = [
   {
     question: "How do billing and scheduling work?",
     answer:
-      "Recurring plans are billed online through Stripe. We confirm your route day, keep your service time consistent, and send visit notifications.",
+      "We start with a free quote, confirm your route day, and keep your service cadence consistent with visit notifications after each cleanup.",
   },
   {
     question: "Do you offer one-time cleanups?",
@@ -186,36 +182,38 @@ const areas = [
   "Riverstone",
 ];
 
+const carouselPhotos = [
+  {
+    src: "https://images.unsplash.com/photo-1518717758536-85ae29035b6d?auto=format&fit=crop&w=1200&q=80",
+    alt: "Dog relaxing in a freshly cleaned yard",
+    label: "Fresh yard, happy dog",
+  },
+  {
+    src: "https://images.unsplash.com/photo-1508672019048-805c876b67e2?auto=format&fit=crop&w=1200&q=80",
+    alt: "Bright green backyard after cleanup",
+    label: "Weekend-ready backyard",
+  },
+  {
+    src: "https://images.unsplash.com/photo-1516934024742-b461fba47600?auto=format&fit=crop&w=1200&q=80",
+    alt: "Homeowner enjoying time outside with dog",
+    label: "Peace of mind outside",
+  },
+  {
+    src: "https://images.unsplash.com/photo-1450778869180-41d0601e046e?auto=format&fit=crop&w=1200&q=80",
+    alt: "Dog running across a clean lawn",
+    label: "Ready for zoomies",
+  },
+];
+
+const recentPosts = getAllPosts().slice(0, 3);
+
 export default function HomePage() {
   return (
     <main>
-      <ScrollEffects />
-
-      <header className="site-header">
-        <div className="container header-inner">
-          <Link href="#top" className="brand">
-            <span className="brand-mark">EY</span>
-            <span>
-              Elite Yard Hygiene
-              <small>Premium pet waste removal</small>
-            </span>
-          </Link>
-          <nav className="desktop-nav" aria-label="Primary">
-            <Link href="#services">Services</Link>
-            <Link href="#pricing">Pricing</Link>
-            <Link href="#gallery">Before & After</Link>
-            <Link href="#faq">FAQ</Link>
-            <Link href="#quote" className="button button-primary header-cta">
-              Get a Free Quote
-            </Link>
-          </nav>
-        </div>
-      </header>
-
       <section className="hero-section" id="top">
         <div className="container hero-grid">
           <div className="hero-copy" data-reveal>
-            <span className="eyebrow">Top Rated Yard Cleanup</span>
+            <span className="eyebrow">Local Yard Cleanup Service</span>
             <h1>
               A cleaner yard, a happier dog, and one less thing on your list.
             </h1>
@@ -243,14 +241,15 @@ export default function HomePage() {
             <div className="micro-proof">
               <span>
                 <Star size={16} fill="currentColor" />
-                Award-winning local service feel
+                Trusted by local dog owners
               </span>
+              <span>Launch offer: first customers save 25%</span>
               <span>Text alerts after every visit</span>
             </div>
           </div>
 
           <div className="hero-visual" data-reveal>
-            <div className="hero-badge">Award-Winning Local Service</div>
+            <div className="hero-badge">Locally trusted yard cleanup</div>
             <div className="hero-card">
               <div className="hero-image-wrap">
                 <Image
@@ -293,6 +292,32 @@ export default function HomePage() {
         </div>
       </section>
 
+      <section className="section promo-section">
+        <div className="container">
+          <div className="promo-card" data-reveal>
+            <div className="promo-copy">
+              <span className="eyebrow">Launch Promotion</span>
+              <h2>We’re officially going live, and our first customers get 25% off.</h2>
+              <p>
+                To celebrate launching Elite Yard Hygiene for the first time, we’re
+                giving early customers a <strong>25% discount</strong> on their first
+                service. It’s the easiest time to lock in a cleaner yard and try us
+                out with less risk.
+              </p>
+            </div>
+            <div className="promo-actions">
+              <div className="promo-badge">
+                <strong>-25%</strong>
+                <span>for first customers</span>
+              </div>
+              <Link href="#quote" className="button button-primary">
+                Claim the Launch Offer
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section className="section gallery-section" id="gallery">
         <div className="container">
           <div className="section-heading" data-reveal>
@@ -327,6 +352,39 @@ export default function HomePage() {
             <Link href="#quote" className="button button-primary">
               Get Your Yard Looking Like This
             </Link>
+          </div>
+        </div>
+      </section>
+
+      <section className="section carousel-section">
+        <div className="container">
+          <div className="section-heading" data-reveal>
+            <span className="eyebrow">Photo Highlights</span>
+            <h2>A clean yard should look this inviting all week long.</h2>
+            <p>
+              Scroll through a few moments that capture the feeling customers are
+              really buying: a yard that looks polished, smells fresher, and feels
+              easy to enjoy again.
+            </p>
+          </div>
+          <div className="photo-carousel" data-reveal>
+            {carouselPhotos.map((photo) => (
+              <article key={photo.label} className="photo-slide">
+                <div className="photo-slide-image">
+                  <Image
+                    src={photo.src}
+                    alt={photo.alt}
+                    fill
+                    sizes="(max-width: 768px) 82vw, 32vw"
+                    className="comparison-image"
+                  />
+                </div>
+                <div className="photo-slide-copy">
+                  <PictureInPicture2 size={18} />
+                  <span>{photo.label}</span>
+                </div>
+              </article>
+            ))}
           </div>
         </div>
       </section>
@@ -406,11 +464,19 @@ export default function HomePage() {
                 className={`pricing-card ${tier.featured ? "featured" : ""}`}
                 data-reveal
               >
-                {tier.featured ? <span className="pricing-badge">Most Popular</span> : null}
-                <h3>{tier.title}</h3>
-                <div className="price-line">
-                  <strong>{tier.price}</strong>
-                  <span>{tier.note}</span>
+                <div className="pricing-card-top">
+                  <div className="pricing-badge-row">
+                    {tier.featured ? (
+                      <span className="pricing-badge">Most Popular</span>
+                    ) : (
+                      <span className="pricing-badge pricing-badge-placeholder" aria-hidden="true" />
+                    )}
+                  </div>
+                  <h3>{tier.title}</h3>
+                  <div className="price-line">
+                    <strong>{tier.price}</strong>
+                    <span>{tier.note}</span>
+                  </div>
                 </div>
                 <p>{tier.description}</p>
                 <ul>
@@ -421,9 +487,9 @@ export default function HomePage() {
                     </li>
                   ))}
                 </ul>
-                <CheckoutButton plan={tier.plan} className="button button-primary button-full">
-                  Book with Stripe
-                </CheckoutButton>
+                <Link href="#quote" className="button button-primary button-full">
+                  Get a Free Quote
+                </Link>
               </article>
             ))}
           </div>
@@ -435,9 +501,9 @@ export default function HomePage() {
                 deodorizing from <strong>$18/visit</strong>.
               </p>
             </div>
-            <CheckoutButton plan="deodorizing" className="button button-secondary">
-              Add Deodorizing
-            </CheckoutButton>
+            <Link href="#quote" className="button button-secondary">
+              Ask About Add-Ons
+            </Link>
           </div>
         </div>
       </section>
@@ -465,10 +531,10 @@ export default function HomePage() {
               </div>
             </div>
             <div className="panel-stat">
-              <CircleDollarSign size={20} />
+              <Check size={20} />
               <div>
-                <strong>Easy billing through Stripe</strong>
-                <p>Modern checkout for recurring and one-time service bookings.</p>
+                <strong>Simple quote-first booking</strong>
+                <p>Start with a free quote, then we confirm the best service plan for your yard.</p>
               </div>
             </div>
             <div className="panel-stat">
@@ -549,6 +615,42 @@ export default function HomePage() {
               <strong>Coverage map placeholder</strong>
               <p>Swap this panel for an embedded Google Map when the business listing is ready.</p>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="section blog-preview-section">
+        <div className="container">
+          <div className="blog-list-header" data-reveal>
+            <div>
+              <span className="eyebrow">From The Blog</span>
+              <h2>Search-friendly answers to the questions local dog owners already ask.</h2>
+            </div>
+            <Link href="/blog" className="button button-secondary">
+              Visit the Blog
+            </Link>
+          </div>
+          <div className="blog-grid">
+            {recentPosts.map((post) => (
+              <article key={post.slug} className="blog-card" data-reveal>
+                <div className="blog-meta">
+                  <span>{post.category}</span>
+                  <span>{post.readTime}</span>
+                </div>
+                <h3>{post.title}</h3>
+                <p>{post.description}</p>
+                <div className="keyword-row">
+                  {post.keywords.slice(0, 2).map((keyword) => (
+                    <span key={keyword}>{keyword}</span>
+                  ))}
+                </div>
+                <div className="blog-card-footer">
+                  <Link href={`/blog/${post.slug}`} className="inline-link">
+                    Read article
+                  </Link>
+                </div>
+              </article>
+            ))}
           </div>
         </div>
       </section>
