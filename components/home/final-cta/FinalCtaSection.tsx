@@ -12,7 +12,9 @@ export const FinalCtaSection = () => {
       <div className={clsx("container", styles.finalCtaGrid)}>
         <div className={styles.panelCopy} data-reveal>
           <span className={shared.eyebrow}>Take Back Your Yard</span>
-          <h2>Get your free quote today and let your backyard feel good again.</h2>
+          <h2>
+            Get your free quote today and let your backyard feel good again.
+          </h2>
           <p>
             Whether you need a weekly route or a one-time cleanup, we make it
             simple to start. Reach out today and we will recommend the best plan

@@ -7,14 +7,16 @@ import styles from "./styles.module.css";
 
 export const SiteChrome = () => {
   return (
-      <>
+    <>
       <header className={styles.siteHeader}>
         <div className={clsx("container", styles.headerInner)}>
           <Link href="/" className={styles.brand}>
             <span className={styles.brandMark}>EY</span>
             <span>
               Elite Yard Hygiene
-              <small className={styles.brandSmall}>Premium pet waste removal</small>
+              <small className={styles.brandSmall}>
+                Premium pet waste removal
+              </small>
             </span>
           </Link>
           <nav className={styles.desktopNav} aria-label="Primary">
@@ -35,7 +37,11 @@ export const SiteChrome = () => {
             </Link>
             <Link
               href="/#quote"
-              className={clsx(shared.button, shared.buttonPrimary, styles.headerCta)}
+              className={clsx(
+                shared.button,
+                shared.buttonPrimary,
+                styles.headerCta
+              )}
             >
               Get a Free Quote
             </Link>

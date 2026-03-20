@@ -106,7 +106,11 @@
   justify-content: space-between;
   gap: 1rem;
   padding: 1.3rem 1.4rem 1.5rem;
-  background: linear-gradient(180deg, rgba(255,255,255,0.96), rgba(243,246,240,0.94));
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.96),
+    rgba(243, 246, 240, 0.94)
+  );
 }
 
 .heroCardFooter p,

@@ -12,14 +12,22 @@ const pricing = [
     price: "$79",
     note: "starting",
     description: "Deep cleanup for overgrown yards or event prep.",
-    features: ["Full walkthrough and pickup", "Bagged disposal included", "Perfect for resets"],
+    features: [
+      "Full walkthrough and pickup",
+      "Bagged disposal included",
+      "Perfect for resets",
+    ],
   },
   {
     title: "Weekly Service",
     price: "$65",
     note: "per week",
     description: "The easy way to keep your yard fresh all season long.",
-    features: ["Scheduled weekly visit", "Visit notifications", "Most popular recurring plan"],
+    features: [
+      "Scheduled weekly visit",
+      "Visit notifications",
+      "Most popular recurring plan",
+    ],
     featured: true,
   },
   {
@@ -27,7 +35,11 @@ const pricing = [
     price: "$98",
     note: "per week",
     description: "Built for multi-dog homes and high-use backyards.",
-    features: ["Two visits each week", "Cleaner yard between visits", "Best for busy households"],
+    features: [
+      "Two visits each week",
+      "Cleaner yard between visits",
+      "Best for busy households",
+    ],
   },
 ];
 
@@ -47,7 +59,10 @@ export const PricingSection = () => {
           {pricing.map((tier) => (
             <article
               key={tier.title}
-              className={clsx(styles.pricingCard, tier.featured && styles.featured)}
+              className={clsx(
+                styles.pricingCard,
+                tier.featured && styles.featured
+              )}
               data-reveal
             >
               <div className={styles.pricingCardTop}>
@@ -81,7 +96,11 @@ export const PricingSection = () => {
               </ul>
               <Link
                 href="#quote"
-                className={clsx(shared.button, shared.buttonPrimary, shared.buttonFull)}
+                className={clsx(
+                  shared.button,
+                  shared.buttonPrimary,
+                  shared.buttonFull
+                )}
               >
                 Get a Free Quote
               </Link>
@@ -96,7 +115,10 @@ export const PricingSection = () => {
               deodorizing from <strong>$18/visit</strong>.
             </p>
           </div>
-          <Link href="#quote" className={clsx(shared.button, shared.buttonSecondary)}>
+          <Link
+            href="#quote"
+            className={clsx(shared.button, shared.buttonSecondary)}
+          >
             Ask About Add-Ons
           </Link>
         </div>

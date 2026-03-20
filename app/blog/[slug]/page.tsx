@@ -40,21 +40,40 @@ export const generateMetadata = async ({
       description: post.seoDescription || post.description,
       type: "article",
       url: `https://eliteyardhygiene.com/blog/${post.slug}`,
-      images: post.featuredImage?.url ? [{ url: post.featuredImage.url, alt: post.featuredImage.alt }] : [],
+      images: post.featuredImage?.url
+        ? [{ url: post.featuredImage.url, alt: post.featuredImage.alt }]
+        : [],
     },
   };
 };
 
 const richTextOptions = {
   renderNode: {
-    [BLOCKS.HEADING_2]: (_node: unknown, children: React.ReactNode) => <h2>{children}</h2>,
-    [BLOCKS.HEADING_3]: (_node: unknown, children: React.ReactNode) => <h3>{children}</h3>,
-    [BLOCKS.PARAGRAPH]: (_node: unknown, children: React.ReactNode) => <p>{children}</p>,
-    [BLOCKS.UL_LIST]: (_node: unknown, children: React.ReactNode) => <ul>{children}</ul>,
-    [BLOCKS.OL_LIST]: (_node: unknown, children: React.ReactNode) => <ol>{children}</ol>,
-    [BLOCKS.LIST_ITEM]: (_node: unknown, children: React.ReactNode) => <li>{children}</li>,
-    [BLOCKS.QUOTE]: (_node: unknown, children: React.ReactNode) => <blockquote>{children}</blockquote>,
-    [INLINES.HYPERLINK]: (node: { data?: { uri?: string } }, children: React.ReactNode) => (
+    [BLOCKS.HEADING_2]: (_node: unknown, children: React.ReactNode) => (
+      <h2>{children}</h2>
+    ),
+    [BLOCKS.HEADING_3]: (_node: unknown, children: React.ReactNode) => (
+      <h3>{children}</h3>
+    ),
+    [BLOCKS.PARAGRAPH]: (_node: unknown, children: React.ReactNode) => (
+      <p>{children}</p>
+    ),
+    [BLOCKS.UL_LIST]: (_node: unknown, children: React.ReactNode) => (
+      <ul>{children}</ul>
+    ),
+    [BLOCKS.OL_LIST]: (_node: unknown, children: React.ReactNode) => (
+      <ol>{children}</ol>
+    ),
+    [BLOCKS.LIST_ITEM]: (_node: unknown, children: React.ReactNode) => (
+      <li>{children}</li>
+    ),
+    [BLOCKS.QUOTE]: (_node: unknown, children: React.ReactNode) => (
+      <blockquote>{children}</blockquote>
+    ),
+    [INLINES.HYPERLINK]: (
+      node: { data?: { uri?: string } },
+      children: React.ReactNode
+    ) => (
       <a href={node.data?.uri} target="_blank" rel="noreferrer">
         {children}
       </a>
@@ -99,7 +118,11 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
             {post.body
               ? documentToReactComponents(post.body, richTextOptions)
               : post.sections?.map((section) => (
-                  <section key={section.heading} className={styles.articleSection} data-reveal>
+                  <section
+                    key={section.heading}
+                    className={styles.articleSection}
+                    data-reveal
+                  >
                     <h2>{section.heading}</h2>
                     {section.paragraphs.map((paragraph) => (
                       <p key={paragraph}>{paragraph}</p>
@@ -114,7 +137,10 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
               Elite Yard Hygiene offers weekly, twice-weekly, and one-time pet
               waste removal for residential yards.
             </p>
-            <Link href="/#quote" className={`${shared.button} ${shared.buttonPrimary}`}>
+            <Link
+              href="/#quote"
+              className={`${shared.button} ${shared.buttonPrimary}`}
+            >
               Get a Free Quote
             </Link>
           </aside>

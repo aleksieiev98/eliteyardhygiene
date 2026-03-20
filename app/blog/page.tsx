@@ -28,8 +28,13 @@ export default async function BlogIndexPage() {
           <div className="container">
             <div className={styles.sectionHeading} data-reveal>
               <span className={shared.eyebrow}>Elite Yard Hygiene Blog</span>
-              <h1 className={styles.blogTitle}>Fresh content is coming soon.</h1>
-              <p>We are setting up the blog right now. Check back soon for local yard cleanup tips.</p>
+              <h1 className={styles.blogTitle}>
+                Fresh content is coming soon.
+              </h1>
+              <p>
+                We are setting up the blog right now. Check back soon for local
+                yard cleanup tips.
+              </p>
             </div>
           </div>
         </section>
@@ -50,7 +55,9 @@ export default async function BlogIndexPage() {
         <div className="container">
           <div className={styles.sectionHeading} data-reveal>
             <span className={shared.eyebrow}>Elite Yard Hygiene Blog</span>
-            <h1 className={styles.blogTitle}>Helpful answers that make us easier to find and easier to trust.</h1>
+            <h1 className={styles.blogTitle}>
+              Helpful answers that make us easier to find and easier to trust.
+            </h1>
             <p>
               This blog is built around real homeowner questions about dog poop
               cleanup, recurring service, lawn care, sanitation, and local pet
@@ -67,7 +74,10 @@ export default async function BlogIndexPage() {
                 <span>{featuredPost.date}</span>
               </div>
               <h2>
-                <Link href={`/blog/${featuredPost.slug}`} className={styles.blogTitleLink}>
+                <Link
+                  href={`/blog/${featuredPost.slug}`}
+                  className={styles.blogTitleLink}
+                >
                   {featuredPost.title}
                 </Link>
               </h2>
@@ -101,7 +111,9 @@ export default async function BlogIndexPage() {
             </div>
             <div className={styles.blogSearchNote}>
               <Search size={18} />
-              <span>Targeting high-intent questions homeowners actually search</span>
+              <span>
+                Targeting high-intent questions homeowners actually search
+              </span>
             </div>
           </div>
 
@@ -113,7 +125,10 @@ export default async function BlogIndexPage() {
                   <span>{post.readTime}</span>
                 </div>
                 <h3>
-                  <Link href={`/blog/${post.slug}`} className={styles.blogTitleLink}>
+                  <Link
+                    href={`/blog/${post.slug}`}
+                    className={styles.blogTitleLink}
+                  >
                     {post.title}
                   </Link>
                 </h3>
@@ -123,7 +138,10 @@ export default async function BlogIndexPage() {
                     <CalendarDays size={16} />
                     {post.date}
                   </span>
-                  <Link href={`/blog/${post.slug}`} className={shared.inlineLink}>
+                  <Link
+                    href={`/blog/${post.slug}`}
+                    className={shared.inlineLink}
+                  >
                     Read more
                     <ArrowRight size={16} />
                   </Link>

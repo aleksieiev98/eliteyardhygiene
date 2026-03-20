@@ -9,7 +9,10 @@
   font-weight: 700;
   font-size: 0.95rem;
   cursor: pointer;
-  transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease;
+  transition:
+    transform 180ms ease,
+    box-shadow 180ms ease,
+    background 180ms ease;
 }
 
 .button:hover {
@@ -44,7 +47,11 @@
   padding: 0.45rem 0.85rem;
   border-radius: 999px;
   margin-bottom: 1.1rem;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.96), rgba(255, 244, 235, 0.96));
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.96),
+    rgba(255, 244, 235, 0.96)
+  );
   border: 1px solid rgba(23, 49, 38, 0.12);
   color: var(--green-900);
   font-weight: 700;

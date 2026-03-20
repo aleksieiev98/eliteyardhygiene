@@ -19,17 +19,25 @@ export const HeroSection = () => {
       <div className={clsx("container", styles.heroGrid)}>
         <div className={styles.heroCopy} data-reveal>
           <span className={shared.eyebrow}>Local Yard Cleanup Service</span>
-          <h1>A cleaner yard, a happier dog, and one less thing on your list.</h1>
+          <h1>
+            A cleaner yard, a happier dog, and one less thing on your list.
+          </h1>
           <p className={styles.heroText}>
             Elite Yard Hygiene delivers recurring and one-time pet waste removal
-            for busy homeowners who want a yard that feels fresh, safe, and ready
-            to enjoy.
+            for busy homeowners who want a yard that feels fresh, safe, and
+            ready to enjoy.
           </p>
           <div className={styles.ctaRow}>
-            <Link href="#quote" className={clsx(shared.button, shared.buttonPrimary)}>
+            <Link
+              href="#quote"
+              className={clsx(shared.button, shared.buttonPrimary)}
+            >
               Get a Free Quote
             </Link>
-            <Link href="#pricing" className={clsx(shared.button, shared.buttonSecondary)}>
+            <Link
+              href="#pricing"
+              className={clsx(shared.button, shared.buttonSecondary)}
+            >
               View Pricing
               <ArrowRight size={16} />
             </Link>

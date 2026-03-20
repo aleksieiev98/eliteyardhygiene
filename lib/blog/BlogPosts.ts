@@ -80,25 +80,35 @@ const getNodeText = (node: RichTextNode): string => {
     return "";
   }
 
-  return node.content.map((child) => getNodeText(child as RichTextNode)).join(" ");
+  return node.content
+    .map((child) => getNodeText(child as RichTextNode))
+    .join(" ");
 };
 
 const getPlainText = (document: Document) => {
   return document.content
-    .map((node) => getNodeText(node as RichTextNode).replace(/\s+/g, " ").trim())
+    .map((node) =>
+      getNodeText(node as RichTextNode)
+        .replace(/\s+/g, " ")
+        .trim()
+    )
     .filter(Boolean)
     .join(" ")
     .trim();
 };
 
 const getExcerpt = (document: Document) => {
-  const paragraph = document.content.find((node) => node.nodeType === BLOCKS.PARAGRAPH);
+  const paragraph = document.content.find(
+    (node) => node.nodeType === BLOCKS.PARAGRAPH
+  );
 
   if (!paragraph) {
     return "Helpful local guidance from Elite Yard Hygiene.";
   }
 
-  const text = getNodeText(paragraph as RichTextNode).replace(/\s+/g, " ").trim();
+  const text = getNodeText(paragraph as RichTextNode)
+    .replace(/\s+/g, " ")
+    .trim();
 
   if (text.length <= 180) {
     return text;
@@ -144,11 +154,12 @@ const getContentfulPosts = async () => {
     return [];
   }
 
-  const response = await contentfulClient.getEntries<ContentfulBlogPostSkeleton>({
-    content_type: "blogPost",
-    order: ["-fields.publishDate"],
-    include: 2,
-  });
+  const response =
+    await contentfulClient.getEntries<ContentfulBlogPostSkeleton>({
+      content_type: "blogPost",
+      order: ["-fields.publishDate"],
+      include: 2,
+    });
 
   return response.items.map(mapContentfulPost);
 };
@@ -164,12 +175,13 @@ export const getPostBySlug = async (slug: string) => {
     return undefined;
   }
 
-  const response = await contentfulClient.getEntries<ContentfulBlogPostSkeleton>({
-    content_type: "blogPost",
-    "fields.slug": slug,
-    limit: 1,
-    include: 2,
-  });
+  const response =
+    await contentfulClient.getEntries<ContentfulBlogPostSkeleton>({
+      content_type: "blogPost",
+      "fields.slug": slug,
+      limit: 1,
+      include: 2,
+    });
 
   const post = response.items[0];
 

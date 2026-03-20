@@ -153,7 +153,7 @@ export const QuoteForm = () => {
         <p
           className={clsx(
             styles.formMessage,
-            status.type === "success" ? styles.success : styles.error,
+            status.type === "success" ? styles.success : styles.error
           )}
         >
           {status.message}

@@ -12,12 +12,14 @@ export const PromoSection = () => {
         <div className={styles.promoCard} data-reveal>
           <div className={styles.promoCopy}>
             <span className={shared.eyebrow}>Launch Promotion</span>
-            <h2>We’re officially going live, and our first customers get 25% off.</h2>
+            <h2>
+              We’re officially going live, and our first customers get 25% off.
+            </h2>
             <p>
-              To celebrate launching Elite Yard Hygiene for the first time, we’re
-              giving early customers a <strong>25% discount</strong> on their first
-              service. It’s the easiest time to lock in a cleaner yard and try us
-              out with less risk.
+              To celebrate launching Elite Yard Hygiene for the first time,
+              we’re giving early customers a <strong>25% discount</strong> on
+              their first service. It’s the easiest time to lock in a cleaner
+              yard and try us out with less risk.
             </p>
           </div>
           <div className={styles.promoActions}>
@@ -25,7 +27,10 @@ export const PromoSection = () => {
               <strong>-25%</strong>
               <span>for first customers</span>
             </div>
-            <Link href="#quote" className={clsx(shared.button, shared.buttonPrimary)}>
+            <Link
+              href="#quote"
+              className={clsx(shared.button, shared.buttonPrimary)}
+            >
               Claim the Launch Offer
             </Link>
           </div>

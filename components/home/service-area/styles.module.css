@@ -56,7 +56,11 @@
   text-align: center;
   border-radius: calc(var(--radius-xl) - 6px);
   background:
-    linear-gradient(135deg, rgba(91, 143, 114, 0.14), rgba(223, 158, 100, 0.12)),
+    linear-gradient(
+      135deg,
+      rgba(91, 143, 114, 0.14),
+      rgba(223, 158, 100, 0.12)
+    ),
     repeating-linear-gradient(
       45deg,
       rgba(255, 255, 255, 0.45),

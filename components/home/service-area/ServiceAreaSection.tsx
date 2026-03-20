@@ -37,7 +37,10 @@ export const ServiceAreaSection = () => {
           <div className={styles.mapPlaceholder}>
             <MapPinned size={28} />
             <strong>Coverage map placeholder</strong>
-            <p>Swap this panel for an embedded Google Map when the business listing is ready.</p>
+            <p>
+              Swap this panel for an embedded Google Map when the business
+              listing is ready.
+            </p>
           </div>
         </div>
       </div>

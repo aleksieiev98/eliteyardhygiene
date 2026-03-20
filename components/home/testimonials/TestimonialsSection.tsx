@@ -35,7 +35,11 @@ export const TestimonialsSection = () => {
         </div>
         <div className={styles.testimonialsGrid}>
           {testimonials.map((testimonial) => (
-            <article key={testimonial.name} className={styles.testimonialCard} data-reveal>
+            <article
+              key={testimonial.name}
+              className={styles.testimonialCard}
+              data-reveal
+            >
               <div className={styles.stars}>
                 {Array.from({ length: 5 }).map((_, index) => (
                   <Star key={index} size={16} fill="currentColor" />

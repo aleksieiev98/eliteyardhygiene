@@ -29,8 +29,16 @@ body {
   margin: 0;
   color: var(--text);
   background:
-    radial-gradient(circle at top left, rgba(223, 158, 100, 0.16), transparent 24%),
-    radial-gradient(circle at top right, rgba(91, 143, 114, 0.18), transparent 28%),
+    radial-gradient(
+      circle at top left,
+      rgba(223, 158, 100, 0.16),
+      transparent 24%
+    ),
+    radial-gradient(
+      circle at top right,
+      rgba(91, 143, 114, 0.18),
+      transparent 28%
+    ),
     linear-gradient(180deg, #fbfaf6 0%, var(--bg) 38%, #f6f6f2 100%);
   font-family: var(--font-sans), sans-serif;
 }
@@ -56,8 +64,16 @@ main {
 
 .muted-section {
   background:
-    linear-gradient(180deg, rgba(229, 239, 225, 0.98), rgba(255, 255, 255, 0.58)),
-    radial-gradient(circle at right top, rgba(216, 137, 70, 0.16), transparent 24%);
+    linear-gradient(
+      180deg,
+      rgba(229, 239, 225, 0.98),
+      rgba(255, 255, 255, 0.58)
+    ),
+    radial-gradient(
+      circle at right top,
+      rgba(216, 137, 70, 0.16),
+      transparent 24%
+    );
 }
 
 button:focus-visible,
@@ -73,7 +89,9 @@ a:focus-visible {
 [data-reveal] {
   opacity: 0;
   transform: translateY(24px);
-  transition: opacity 700ms ease, transform 700ms ease;
+  transition:
+    opacity 700ms ease,
+    transform 700ms ease;
 }
 
 [data-reveal].is-visible {

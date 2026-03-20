@@ -75,7 +75,9 @@
 }
 
 .comparisonDivider:focus-visible .comparisonHandle {
-  box-shadow: 0 0 0 4px rgba(33, 91, 58, 0.18), var(--shadow-md);
+  box-shadow:
+    0 0 0 4px rgba(33, 91, 58, 0.18),
+    var(--shadow-md);
 }
 
 .comparisonBadges {

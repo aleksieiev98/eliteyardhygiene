@@ -18,12 +18,17 @@ export const SiteFooter = () => {
         <div>
           <h4>Contact</h4>
           <a href="tel:5555550145">(555) 555-0145</a>
-          <a href="mailto:hello@eliteyardhygiene.com">hello@eliteyardhygiene.com</a>
+          <a href="mailto:hello@eliteyardhygiene.com">
+            hello@eliteyardhygiene.com
+          </a>
           <p>Mon-Fri 8am-6pm</p>
         </div>
         <div>
           <h4>Service Area</h4>
-          <p>Brookhaven, Cedar Park, Willow Creek, Maple Heights, and nearby neighborhoods.</p>
+          <p>
+            Brookhaven, Cedar Park, Willow Creek, Maple Heights, and nearby
+            neighborhoods.
+          </p>
         </div>
         <div>
           <h4>Follow</h4>
@@ -37,7 +42,10 @@ export const SiteFooter = () => {
             <a href="https://tiktok.com" aria-label="TikTok">
               <Music2 size={18} />
             </a>
-            <a href="https://business.google.com" aria-label="Google Business Profile">
+            <a
+              href="https://business.google.com"
+              aria-label="Google Business Profile"
+            >
               <Star size={18} />
             </a>
           </div>

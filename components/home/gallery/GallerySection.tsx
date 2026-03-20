@@ -13,7 +13,8 @@ const comparisonCards = [
     after:
       "https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=1200&q=80",
     title: "Weekend reset for a family backyard",
-    description: "One-time cleanup plus deodorizing to get this yard party-ready in a single visit.",
+    description:
+      "One-time cleanup plus deodorizing to get this yard party-ready in a single visit.",
   },
   {
     before:
@@ -30,7 +31,8 @@ const comparisonCards = [
     after:
       "https://images.unsplash.com/photo-1460317442991-0ec209397118?auto=format&fit=crop&w=1200&q=80",
     title: "Seasonal cleanup before spring",
-    description: "A full-property scoop and refresh to make the yard feel clean and welcoming again.",
+    description:
+      "A full-property scoop and refresh to make the yard feel clean and welcoming again.",
   },
 ];
 
@@ -52,7 +54,10 @@ export const GallerySection = () => {
           ))}
         </div>
         <div className={styles.sectionCta} data-reveal>
-          <Link href="#quote" className={clsx(shared.button, shared.buttonPrimary)}>
+          <Link
+            href="#quote"
+            className={clsx(shared.button, shared.buttonPrimary)}
+          >
             Get Your Yard Looking Like This
           </Link>
         </div>

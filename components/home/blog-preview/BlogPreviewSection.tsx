@@ -16,9 +16,15 @@ export const BlogPreviewSection = async () => {
         <div className={styles.blogListHeader} data-reveal>
           <div>
             <span className={shared.eyebrow}>From The Blog</span>
-            <h2>Search-friendly answers to the questions local dog owners already ask.</h2>
+            <h2>
+              Search-friendly answers to the questions local dog owners already
+              ask.
+            </h2>
           </div>
-          <Link href="/blog" className={clsx(shared.button, shared.buttonSecondary)}>
+          <Link
+            href="/blog"
+            className={clsx(shared.button, shared.buttonSecondary)}
+          >
             Visit the Blog
           </Link>
         </div>
@@ -30,7 +36,10 @@ export const BlogPreviewSection = async () => {
                 <span>{post.readTime}</span>
               </div>
               <h3>
-                <Link href={`/blog/${post.slug}`} className={styles.blogTitleLink}>
+                <Link
+                  href={`/blog/${post.slug}`}
+                  className={styles.blogTitleLink}
+                >
                   {post.title}
                 </Link>
               </h3>

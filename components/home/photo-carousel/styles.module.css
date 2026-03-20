@@ -18,8 +18,16 @@
 
 .carouselSection {
   background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.6), rgba(246, 243, 234, 0.85)),
-    radial-gradient(circle at left center, rgba(223, 158, 100, 0.1), transparent 28%);
+    linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.6),
+      rgba(246, 243, 234, 0.85)
+    ),
+    radial-gradient(
+      circle at left center,
+      rgba(223, 158, 100, 0.1),
+      transparent 28%
+    );
 }
 
 .photoCarousel {
