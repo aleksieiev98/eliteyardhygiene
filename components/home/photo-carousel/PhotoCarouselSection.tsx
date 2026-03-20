@@ -7,23 +7,23 @@ import styles from "./styles.module.css";
 
 const carouselPhotos = [
   {
-    src: "https://images.unsplash.com/photo-1518717758536-85ae29035b6d?auto=format&fit=crop&w=1200&q=80",
+    src: "/assets/happy-dog-closeup.jpg",
     alt: "Dog relaxing in a freshly cleaned yard",
     label: "Fresh yard, happy dog",
   },
   {
-    src: "https://images.unsplash.com/photo-1508672019048-805c876b67e2?auto=format&fit=crop&w=1200&q=80",
+    src: "/assets/clean-backyard-lawn.jpg",
     alt: "Bright green backyard after cleanup",
     label: "Weekend-ready backyard",
   },
   {
-    src: "https://images.unsplash.com/photo-1516934024742-b461fba47600?auto=format&fit=crop&w=1200&q=80",
-    alt: "Homeowner enjoying time outside with dog",
-    label: "Peace of mind outside",
+    src: "/assets/yard-cleanup-technician.webp",
+    alt: "Technician cleaning a residential yard",
+    label: "Handled by a pro",
   },
   {
-    src: "https://images.unsplash.com/photo-1450778869180-41d0601e046e?auto=format&fit=crop&w=1200&q=80",
-    alt: "Dog running across a clean lawn",
+    src: "/assets/dog-yard-cleanup.jpg",
+    alt: "Clean lawn after pet waste removal service",
     label: "Ready for zoomies",
   },
 ];

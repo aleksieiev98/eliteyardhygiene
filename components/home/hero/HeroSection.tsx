@@ -1,10 +1,10 @@
 import { clsx } from "clsx";
-import Image from "next/image";
-import Link from "next/link";
 import { ArrowRight, BadgeCheck, Star } from "lucide-react";
+import Link from "next/link";
 
 import shared from "@/styles/shared.module.css";
 
+import { HeroImageRotator } from "./HeroImageRotator";
 import styles from "./styles.module.css";
 
 const trustPills = [
@@ -13,13 +13,30 @@ const trustPills = [
   "Pet-Friendly",
 ];
 
+const heroImages = [
+  {
+    src: "/assets/happy-dog-closeup.jpg",
+    alt: "Happy dog in a clean backyard",
+  },
+  {
+    src: "/assets/clean-yard-service.jpg",
+    alt: "Freshly cleaned yard ready to enjoy",
+  },
+  {
+    src: "/assets/weekly-pet-waste-removal.jpg",
+    alt: "Weekly pet waste removal service in a backyard",
+  },
+];
+
 export const HeroSection = () => {
   return (
     <section className={styles.heroSection} id="top">
       <div className={clsx("container", styles.heroGrid)}>
         <div className={styles.heroCopy} data-reveal>
           <span className={shared.eyebrow}>Local Yard Cleanup Service</span>
-          <h1>A cleaner yard, a happier dog, and one less thing on your list.</h1>
+          <h1>
+            A cleaner yard, a happier dog, and one less thing on your list.
+          </h1>
           <p className={styles.heroText}>
             Elite Yard Hygiene delivers recurring and one-time pet waste removal
             for busy homeowners who want a yard that feels fresh, safe, and
@@ -62,16 +79,7 @@ export const HeroSection = () => {
         <div className={styles.heroVisual} data-reveal>
           <div className={styles.heroBadge}>Licensed local yard cleanup</div>
           <div className={styles.heroCard}>
-            <div className={styles.heroImageWrap}>
-              <Image
-                src="https://images.unsplash.com/photo-1517849845537-4d257902454a?auto=format&fit=crop&w=1200&q=80"
-                alt="Happy dog in a clean backyard"
-                fill
-                priority
-                sizes="(max-width: 768px) 100vw, 50vw"
-                className={styles.heroImage}
-              />
-            </div>
+            <HeroImageRotator images={heroImages} />
             <div className={styles.heroCardFooter}>
               <div>
                 <strong>Fresh yard feeling</strong>

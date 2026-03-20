@@ -17,6 +17,11 @@ export const metadata: Metadata = {
     "SEO-focused answers to common pet waste removal questions, lawn hygiene tips, and local yard cleanup advice from Elite Yard Hygiene.",
 };
 
+const defaultFeaturedImage = {
+  url: "/assets/blog-dog-poop-pickup-frequency.webp",
+  alt: "Dog in a yard after cleanup service",
+};
+
 export default async function BlogIndexPage() {
   const posts = await getAllPosts();
   const [featuredPost, ...otherPosts] = posts;
@@ -44,10 +49,7 @@ export default async function BlogIndexPage() {
 
   const featuredImage = featuredPost.featuredImage?.url
     ? featuredPost.featuredImage
-    : {
-        url: "https://images.unsplash.com/photo-1517849845537-4d257902454a?auto=format&fit=crop&w=1200&q=80",
-        alt: "Happy dog in a clean yard",
-      };
+    : defaultFeaturedImage;
 
   return (
     <main className={styles.blogPage}>

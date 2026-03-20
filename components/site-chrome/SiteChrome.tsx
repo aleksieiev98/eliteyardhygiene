@@ -59,14 +59,14 @@ export const SiteChrome = () => {
         <Link href="/#pricing" className={styles.floatingNavLink}>
           Pricing
         </Link>
+        <Link href="/blog" className={styles.floatingNavLink}>
+          Blog
+        </Link>
         <Link
           href="/#quote"
           className={clsx(styles.floatingNavLink, styles.floatingNavCta)}
         >
           Free Quote
-        </Link>
-        <Link href="/blog" className={styles.floatingNavLink}>
-          Blog
         </Link>
       </nav>
     </>

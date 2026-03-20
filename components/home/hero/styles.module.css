@@ -95,10 +95,28 @@
 .heroImageWrap {
   position: relative;
   min-height: 540px;
+  background: rgba(233, 240, 230, 0.7);
+}
+
+.heroImageLayer {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 1200ms ease;
+}
+
+.heroImageLayerActive {
+  opacity: 1;
 }
 
 .heroImage {
   object-fit: cover;
+  transform: scale(1);
+  transition: transform 5200ms ease-in-out;
+}
+
+.heroImageActive {
+  transform: scale(1.04);
 }
 
 .heroCardFooter {
