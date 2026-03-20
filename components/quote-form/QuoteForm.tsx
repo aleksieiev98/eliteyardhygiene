@@ -1,13 +1,22 @@
 "use client";
 
 import { clsx } from "clsx";
-import { FormEvent, useState } from "react";
+import { useState } from "react";
+import { useForm } from "react-hook-form";
 
 import shared from "@/styles/shared.module.css";
 
 import styles from "./styles.module.css";
 
-const initialState = {
+type QuoteFormValues = {
+  name: string;
+  email: string;
+  phone: string;
+  service: string;
+  details: string;
+};
+
+const defaultValues: QuoteFormValues = {
   name: "",
   email: "",
   phone: "",
@@ -16,7 +25,6 @@ const initialState = {
 };
 
 export const QuoteForm = () => {
-  const [form, setForm] = useState(initialState);
   const [status, setStatus] = useState<{
     type: "idle" | "success" | "error";
     message: string;
@@ -24,11 +32,17 @@ export const QuoteForm = () => {
     type: "idle",
     message: "",
   });
-  const [submitting, setSubmitting] = useState(false);
 
-  async function handleSubmit(event: FormEvent<HTMLFormElement>) {
-    event.preventDefault();
-    setSubmitting(true);
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors, isSubmitting },
+  } = useForm<QuoteFormValues>({
+    defaultValues,
+  });
+
+  const onSubmit = handleSubmit(async (formValues) => {
     setStatus({ type: "idle", message: "" });
 
     try {
@@ -37,7 +51,7 @@ export const QuoteForm = () => {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(form),
+        body: JSON.stringify(formValues),
       });
 
       const data = (await response.json()) as { message?: string };
@@ -52,7 +66,7 @@ export const QuoteForm = () => {
           data.message ??
           "Thanks! We received your request and will reach out shortly.",
       });
-      setForm(initialState);
+      reset(defaultValues);
     } catch (error) {
       setStatus({
         type: "error",
@@ -61,61 +75,58 @@ export const QuoteForm = () => {
             ? error.message
             : "We couldn't send your request. Please try again.",
       });
-    } finally {
-      setSubmitting(false);
     }
-  }
+  });
 
   return (
-    <form className={styles.quoteForm} onSubmit={handleSubmit}>
+    <form className={styles.quoteForm} onSubmit={onSubmit} noValidate>
       <div className={styles.formGrid}>
         <label>
           Name
           <input
-            required
             type="text"
-            value={form.name}
-            onChange={(event) =>
-              setForm((current) => ({ ...current, name: event.target.value }))
-            }
             placeholder="Jordan Rivera"
+            {...register("name", {
+              required: "Please enter your name.",
+            })}
           />
+          {errors.name ? (
+            <span className={styles.fieldError}>{errors.name.message}</span>
+          ) : null}
         </label>
         <label>
           Email
           <input
-            required
             type="email"
-            value={form.email}
-            onChange={(event) =>
-              setForm((current) => ({ ...current, email: event.target.value }))
-            }
             placeholder="jordan@email.com"
+            {...register("email", {
+              required: "Please enter your email.",
+              pattern: {
+                value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+                message: "Please enter a valid email address.",
+              },
+            })}
           />
+          {errors.email ? (
+            <span className={styles.fieldError}>{errors.email.message}</span>
+          ) : null}
         </label>
         <label>
           Phone
           <input
-            required
             type="tel"
-            value={form.phone}
-            onChange={(event) =>
-              setForm((current) => ({ ...current, phone: event.target.value }))
-            }
             placeholder="(555) 555-0145"
+            {...register("phone", {
+              required: "Please enter your phone number.",
+            })}
           />
+          {errors.phone ? (
+            <span className={styles.fieldError}>{errors.phone.message}</span>
+          ) : null}
         </label>
         <label>
           Service
-          <select
-            value={form.service}
-            onChange={(event) =>
-              setForm((current) => ({
-                ...current,
-                service: event.target.value,
-              }))
-            }
-          >
+          <select {...register("service")}>
             <option>Weekly Service</option>
             <option>Twice-Weekly Service</option>
             <option>One-Time Cleanup</option>
@@ -128,24 +139,21 @@ export const QuoteForm = () => {
         Yard details
         <textarea
           rows={5}
-          value={form.details}
-          onChange={(event) =>
-            setForm((current) => ({ ...current, details: event.target.value }))
-          }
           placeholder="Tell us your yard size, number of dogs, gate access details, and preferred start date."
+          {...register("details")}
         />
       </label>
       <button
         type="submit"
         className={clsx(shared.button, shared.buttonPrimary, shared.buttonFull)}
       >
-        {submitting ? "Sending..." : "Request My Free Quote"}
+        {isSubmitting ? "Sending..." : "Request My Free Quote"}
       </button>
       {status.type !== "idle" ? (
         <p
           className={clsx(
             styles.formMessage,
-            status.type === "success" ? styles.success : styles.error
+            status.type === "success" ? styles.success : styles.error,
           )}
         >
           {status.message}

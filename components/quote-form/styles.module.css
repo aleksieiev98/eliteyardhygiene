@@ -50,6 +50,12 @@
   background-repeat: no-repeat;
 }
 
+.fieldError {
+  font-size: 0.84rem;
+  font-weight: 600;
+  color: #8c2f2f;
+}
+
 .formMessage {
   margin: 0;
   padding: 0.9rem 1rem;
