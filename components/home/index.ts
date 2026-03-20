@@ -11,5 +11,4 @@ export { ServiceAreaSection } from "./service-area";
 export { ServicesSection } from "./services";
 export { SiteFooter } from "./site-footer";
 export { TestimonialsSection } from "./testimonials";
-export { TrustBarSection } from "./trust-bar";
 export { WhyChooseUsSection } from "./why-choose-us";

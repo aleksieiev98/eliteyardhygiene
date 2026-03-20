@@ -12,7 +12,6 @@ import {
   ServicesSection,
   SiteFooter,
   TestimonialsSection,
-  TrustBarSection,
   WhyChooseUsSection,
 } from "@/components/home";
 
@@ -20,7 +19,6 @@ export default async function HomePage() {
   return (
     <main>
       <HeroSection />
-      <TrustBarSection />
       <PromoSection />
       <GallerySection />
       <PhotoCarouselSection />
