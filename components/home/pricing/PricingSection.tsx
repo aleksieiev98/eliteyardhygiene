@@ -38,9 +38,12 @@ const pricing = [
     note: "per week",
     description: "Built for multi-dog homes and high-use backyards.",
     features: [
-      "Two visits each week",
+      "Two scheduled visits each week",
+      "Pet-safe deodorizing",
+      "Dog spot lawn treatment",
+      "Visit notifications",
       "Cleaner yard between visits",
-      "Best for busy households",
+      "Best for busy households and multiple dogs",
     ],
   },
 ];

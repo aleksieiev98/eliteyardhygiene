@@ -1,4 +1,5 @@
-.quoteForm {
+.quoteForm,
+.successState {
   display: grid;
   gap: 1rem;
   color: var(--muted);
@@ -65,6 +66,91 @@
   font-weight: 600;
 }
 
+.successState {
+  position: relative;
+  overflow: hidden;
+  min-height: 420px;
+  align-content: center;
+  justify-items: center;
+  padding: 2.4rem 1.8rem;
+  border-radius: 28px;
+  background:
+    radial-gradient(
+      circle at top,
+      rgba(255, 255, 255, 0.98),
+      rgba(239, 245, 237, 0.96) 48%
+    ),
+    linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.96),
+      rgba(242, 247, 240, 0.94)
+    );
+  border: 1px solid rgba(23, 49, 38, 0.08);
+  box-shadow: var(--shadow-md);
+  text-align: center;
+}
+
+.successState h3 {
+  margin: 0;
+  font-family: var(--font-display), serif;
+  font-size: clamp(2rem, 5vw, 3rem);
+  line-height: 0.98;
+  letter-spacing: -0.03em;
+  color: var(--green-900);
+}
+
+.successState p {
+  max-width: 34ch;
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.75;
+}
+
+.successIconWrap {
+  display: grid;
+  place-items: center;
+  width: 88px;
+  height: 88px;
+  border-radius: 999px;
+  color: var(--green-700);
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.98),
+    rgba(227, 241, 228, 0.96)
+  );
+  box-shadow: 0 20px 40px rgba(23, 49, 38, 0.12);
+}
+
+.confettiLayer {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.confettiPiece {
+  position: absolute;
+  top: -12%;
+  width: 12px;
+  height: 22px;
+  border-radius: 999px;
+  opacity: 0;
+  transform: rotate(12deg);
+  animation: confetti-fall 2200ms ease-in infinite;
+}
+
+.confettiPiece:nth-child(3n + 1) {
+  background: #214634;
+}
+
+.confettiPiece:nth-child(3n + 2) {
+  background: #e5b56a;
+}
+
+.confettiPiece:nth-child(3n) {
+  background: #8fc09c;
+}
+
 .success {
   background: rgba(91, 143, 114, 0.14);
   color: var(--green-700);
@@ -75,8 +161,29 @@
   color: #8c2f2f;
 }
 
+@keyframes confetti-fall {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 0, 0) rotate(0deg);
+  }
+
+  15% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    transform: translate3d(20px, 460px, 0) rotate(220deg);
+  }
+}
+
 @media (max-width: 760px) {
   .formGrid {
     grid-template-columns: 1fr;
+  }
+
+  .successState {
+    min-height: 360px;
+    padding: 2rem 1.35rem;
   }
 }

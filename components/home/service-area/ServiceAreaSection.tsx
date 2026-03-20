@@ -27,7 +27,8 @@ export const ServiceAreaSection = () => {
         <div className={styles.panelCopy} data-reveal>
           <span className={shared.eyebrow}>Service Area</span>
           <h2>
-            Serving Chicago&apos;s northwest suburbs with reliable weekly routes.
+            Serving Chicago&apos;s northwest suburbs with reliable weekly
+            routes.
           </h2>
           <p>
             Elite Yard Hygiene proudly serves homeowners across Buffalo Grove,

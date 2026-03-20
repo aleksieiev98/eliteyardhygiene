@@ -8,7 +8,7 @@ import shared from "@/styles/shared.module.css";
 import styles from "./styles.module.css";
 
 const trustPills = [
-  "Locally Trusted",
+  "Licensed & Insured",
   "Reliable Weekly Service",
   "Pet-Friendly",
 ];
@@ -19,9 +19,7 @@ export const HeroSection = () => {
       <div className={clsx("container", styles.heroGrid)}>
         <div className={styles.heroCopy} data-reveal>
           <span className={shared.eyebrow}>Local Yard Cleanup Service</span>
-          <h1>
-            A cleaner yard, a happier dog, and one less thing on your list.
-          </h1>
+          <h1>A cleaner yard, a happier dog, and one less thing on your list.</h1>
           <p className={styles.heroText}>
             Elite Yard Hygiene delivers recurring and one-time pet waste removal
             for busy homeowners who want a yard that feels fresh, safe, and
@@ -54,16 +52,15 @@ export const HeroSection = () => {
             <div className={styles.microProof}>
               <span>
                 <Star size={16} fill="currentColor" />
-                Trusted by local dog owners
+                Trusted by nearby dog owners
               </span>
               <span>Launch offer: first customers save 25%</span>
-              <span>Text alerts after every visit</span>
             </div>
           </div>
         </div>
 
         <div className={styles.heroVisual} data-reveal>
-          <div className={styles.heroBadge}>Locally trusted yard cleanup</div>
+          <div className={styles.heroBadge}>Licensed local yard cleanup</div>
           <div className={styles.heroCard}>
             <div className={styles.heroImageWrap}>
               <Image
@@ -79,10 +76,6 @@ export const HeroSection = () => {
               <div>
                 <strong>Fresh yard feeling</strong>
                 <p>Reliable scooping, deodorizing, and secure gate checks.</p>
-              </div>
-              <div className={styles.miniStat}>
-                <span>650+</span>
-                <small>local customers served</small>
               </div>
             </div>
           </div>

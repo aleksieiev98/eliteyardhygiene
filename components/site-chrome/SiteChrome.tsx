@@ -23,9 +23,6 @@ export const SiteChrome = () => {
             <Link href="/#services" className={styles.desktopNavLink}>
               Services
             </Link>
-            <Link href="/blog" className={styles.desktopNavLink}>
-              Blog
-            </Link>
             <Link href="/#pricing" className={styles.desktopNavLink}>
               Pricing
             </Link>
@@ -34,6 +31,9 @@ export const SiteChrome = () => {
             </Link>
             <Link href="/#faq" className={styles.desktopNavLink}>
               FAQ
+            </Link>
+            <Link href="/blog" className={styles.desktopNavLink}>
+              Blog
             </Link>
             <Link
               href="/#quote"
@@ -53,9 +53,6 @@ export const SiteChrome = () => {
         <Link href="/#top" className={styles.floatingNavLink}>
           Home
         </Link>
-        <Link href="/blog" className={styles.floatingNavLink}>
-          Blog
-        </Link>
         <Link href="/#gallery" className={styles.floatingNavLink}>
           Gallery
         </Link>
@@ -67,6 +64,9 @@ export const SiteChrome = () => {
           className={clsx(styles.floatingNavLink, styles.floatingNavCta)}
         >
           Free Quote
+        </Link>
+        <Link href="/blog" className={styles.floatingNavLink}>
+          Blog
         </Link>
       </nav>
     </>

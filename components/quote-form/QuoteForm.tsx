@@ -1,7 +1,9 @@
 "use client";
 
+import { useMutation } from "@tanstack/react-query";
 import { clsx } from "clsx";
-import { useState } from "react";
+import { CheckCircle2 } from "lucide-react";
+import { useMemo } from "react";
 import { useForm } from "react-hook-form";
 
 import shared from "@/styles/shared.module.css";
@@ -16,6 +18,10 @@ type QuoteFormValues = {
   details: string;
 };
 
+type QuoteResponse = {
+  message?: string;
+};
+
 const defaultValues: QuoteFormValues = {
   name: "",
   email: "",
@@ -24,28 +30,20 @@ const defaultValues: QuoteFormValues = {
   details: "",
 };
 
-export const QuoteForm = () => {
-  const [status, setStatus] = useState<{
-    type: "idle" | "success" | "error";
-    message: string;
-  }>({
-    type: "idle",
-    message: "",
-  });
+const confettiPieces = Array.from({ length: 18 }, (_, index) => index);
 
+export const QuoteForm = () => {
   const {
     register,
     handleSubmit,
     reset,
-    formState: { errors, isSubmitting },
+    formState: { errors },
   } = useForm<QuoteFormValues>({
     defaultValues,
   });
 
-  const onSubmit = handleSubmit(async (formValues) => {
-    setStatus({ type: "idle", message: "" });
-
-    try {
+  const mutation = useMutation({
+    mutationFn: async (formValues: QuoteFormValues) => {
       const response = await fetch("/api/quote", {
         method: "POST",
         headers: {
@@ -54,29 +52,58 @@ export const QuoteForm = () => {
         body: JSON.stringify(formValues),
       });
 
-      const data = (await response.json()) as { message?: string };
+      const data = (await response.json()) as QuoteResponse;
 
       if (!response.ok) {
         throw new Error(data.message ?? "Something went wrong.");
       }
 
-      setStatus({
-        type: "success",
-        message:
-          data.message ??
-          "Thanks! We received your request and will reach out shortly.",
-      });
+      return data;
+    },
+    onSuccess: () => {
       reset(defaultValues);
-    } catch (error) {
-      setStatus({
-        type: "error",
-        message:
-          error instanceof Error
-            ? error.message
-            : "We couldn't send your request. Please try again.",
-      });
-    }
+    },
   });
+
+  const successMessage =
+    mutation.data?.message ??
+    "Thank you. We received your quote request and will contact you soon.";
+
+  const errorMessage = useMemo(() => {
+    if (!(mutation.error instanceof Error)) {
+      return "We couldn't send your request. Please try again.";
+    }
+
+    return mutation.error.message;
+  }, [mutation.error]);
+
+  const onSubmit = handleSubmit((formValues) => {
+    mutation.mutate(formValues);
+  });
+
+  if (mutation.isSuccess) {
+    return (
+      <div className={styles.successState} role="status" aria-live="polite">
+        <div className={styles.confettiLayer} aria-hidden="true">
+          {confettiPieces.map((piece) => (
+            <span
+              key={piece}
+              className={styles.confettiPiece}
+              style={{
+                left: `${(piece % 6) * 17 + 4}%`,
+                animationDelay: `${piece * 90}ms`,
+              }}
+            />
+          ))}
+        </div>
+        <div className={styles.successIconWrap}>
+          <CheckCircle2 size={44} />
+        </div>
+        <h3>Thank you, your quote request is in.</h3>
+        <p>{successMessage}</p>
+      </div>
+    );
+  }
 
   return (
     <form className={styles.quoteForm} onSubmit={onSubmit} noValidate>
@@ -146,18 +173,12 @@ export const QuoteForm = () => {
       <button
         type="submit"
         className={clsx(shared.button, shared.buttonPrimary, shared.buttonFull)}
+        disabled={mutation.isPending}
       >
-        {isSubmitting ? "Sending..." : "Request My Free Quote"}
+        {mutation.isPending ? "Sending..." : "Request My Free Quote"}
       </button>
-      {status.type !== "idle" ? (
-        <p
-          className={clsx(
-            styles.formMessage,
-            status.type === "success" ? styles.success : styles.error
-          )}
-        >
-          {status.message}
-        </p>
+      {mutation.isError ? (
+        <p className={clsx(styles.formMessage, styles.error)}>{errorMessage}</p>
       ) : null}
     </form>
   );

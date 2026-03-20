@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Cormorant_Garamond, Urbanist } from "next/font/google";
 import type { ReactNode } from "react";
 
+import { QueryProvider } from "@/components/query-provider";
 import { ScrollEffects } from "@/components/scroll-effects";
 import { SiteChrome } from "@/components/site-chrome";
 
@@ -42,9 +43,11 @@ export default function RootLayout({
   return (
     <html lang="en" data-scroll-behavior="smooth">
       <body className={`${display.variable} ${sans.variable}`}>
-        <ScrollEffects />
-        <SiteChrome />
-        {children}
+        <QueryProvider>
+          <ScrollEffects />
+          <SiteChrome />
+          {children}
+        </QueryProvider>
       </body>
     </html>
   );

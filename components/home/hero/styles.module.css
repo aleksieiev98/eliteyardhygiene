@@ -102,9 +102,6 @@
 }
 
 .heroCardFooter {
-  display: flex;
-  justify-content: space-between;
-  gap: 1rem;
   padding: 1.3rem 1.4rem 1.5rem;
   background: linear-gradient(
     180deg,
@@ -113,24 +110,8 @@
   );
 }
 
-.heroCardFooter p,
-.miniStat small {
+.heroCardFooter p {
   color: var(--muted);
-}
-
-.miniStat {
-  min-width: 116px;
-  padding: 0.9rem;
-  border-radius: 20px;
-  background: rgba(255, 255, 255, 0.92);
-  text-align: right;
-}
-
-.miniStat span {
-  display: block;
-  font-size: 1.6rem;
-  line-height: 1;
-  font-weight: 800;
 }
 
 @media (max-width: 1100px) {
@@ -150,11 +131,6 @@
 
   .heroCopy h1 {
     font-size: clamp(2.8rem, 14vw, 4rem);
-  }
-
-  .heroCardFooter {
-    flex-direction: column;
-    align-items: flex-start;
   }
 
   .heroImageWrap {
