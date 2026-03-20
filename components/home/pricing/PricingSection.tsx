@@ -1,0 +1,106 @@
+import { clsx } from "clsx";
+import Link from "next/link";
+import { Check } from "lucide-react";
+
+import shared from "@/styles/shared.module.css";
+
+import styles from "./styles.module.css";
+
+const pricing = [
+  {
+    title: "One-Time Cleanup",
+    price: "$79",
+    note: "starting",
+    description: "Deep cleanup for overgrown yards or event prep.",
+    features: ["Full walkthrough and pickup", "Bagged disposal included", "Perfect for resets"],
+  },
+  {
+    title: "Weekly Service",
+    price: "$65",
+    note: "per week",
+    description: "The easy way to keep your yard fresh all season long.",
+    features: ["Scheduled weekly visit", "Visit notifications", "Most popular recurring plan"],
+    featured: true,
+  },
+  {
+    title: "Twice Weekly",
+    price: "$98",
+    note: "per week",
+    description: "Built for multi-dog homes and high-use backyards.",
+    features: ["Two visits each week", "Cleaner yard between visits", "Best for busy households"],
+  },
+];
+
+export const PricingSection = () => {
+  return (
+    <section className="section" id="pricing">
+      <div className="container">
+        <div className={styles.sectionHeading} data-reveal>
+          <span className={shared.eyebrow}>Pricing</span>
+          <h2>Clear starting prices with no guesswork.</h2>
+          <p>
+            Final pricing depends on yard size, number of dogs, and service
+            frequency, but these packages give a clear starting point.
+          </p>
+        </div>
+        <div className={styles.pricingGrid}>
+          {pricing.map((tier) => (
+            <article
+              key={tier.title}
+              className={clsx(styles.pricingCard, tier.featured && styles.featured)}
+              data-reveal
+            >
+              <div className={styles.pricingCardTop}>
+                <div className={styles.pricingBadgeRow}>
+                  {tier.featured ? (
+                    <span className={styles.pricingBadge}>Most Popular</span>
+                  ) : (
+                    <span
+                      className={clsx(
+                        styles.pricingBadge,
+                        styles.pricingBadgePlaceholder
+                      )}
+                      aria-hidden="true"
+                    />
+                  )}
+                </div>
+                <h3>{tier.title}</h3>
+                <div className={styles.priceLine}>
+                  <strong>{tier.price}</strong>
+                  <span>{tier.note}</span>
+                </div>
+              </div>
+              <p>{tier.description}</p>
+              <ul>
+                {tier.features.map((feature) => (
+                  <li key={feature}>
+                    <Check size={16} />
+                    {feature}
+                  </li>
+                ))}
+              </ul>
+              <Link
+                href="#quote"
+                className={clsx(shared.button, shared.buttonPrimary, shared.buttonFull)}
+              >
+                Get a Free Quote
+              </Link>
+            </article>
+          ))}
+        </div>
+        <div className={styles.addonsCard} data-reveal>
+          <div>
+            <h3>Optional add-ons</h3>
+            <p>
+              Multi-dog add-on from <strong>$12/week</strong>. Pet-safe
+              deodorizing from <strong>$18/visit</strong>.
+            </p>
+          </div>
+          <Link href="#quote" className={clsx(shared.button, shared.buttonSecondary)}>
+            Ask About Add-Ons
+          </Link>
+        </div>
+      </div>
+    </section>
+  );
+};

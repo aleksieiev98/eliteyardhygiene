@@ -1,0 +1,76 @@
+.promoSection {
+  padding-top: 2rem;
+}
+
+.promoCard {
+  display: grid;
+  grid-template-columns: 1.3fr 0.7fr;
+  gap: 2rem;
+  align-items: center;
+  padding: 2rem;
+  border: 1px solid rgba(23, 49, 38, 0.08);
+  border-radius: var(--radius-xl);
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.98), rgba(238, 244, 236, 0.96)),
+    radial-gradient(circle at top right, rgba(216, 137, 70, 0.28), transparent 30%);
+  box-shadow: var(--shadow-lg);
+}
+
+.promoCopy h2 {
+  margin: 0 0 1rem;
+  font-family: var(--font-display), serif;
+  font-size: clamp(2.2rem, 4vw, 3.6rem);
+  line-height: 0.98;
+}
+
+.promoCopy p {
+  margin: 0;
+  max-width: 58ch;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.promoActions {
+  display: grid;
+  gap: 1rem;
+  justify-items: end;
+}
+
+.promoBadge {
+  min-width: 220px;
+  padding: 1.5rem;
+  border-radius: 28px;
+  text-align: center;
+  color: #fff;
+  background: linear-gradient(135deg, var(--accent-strong), var(--green-700));
+  box-shadow: var(--shadow-md);
+}
+
+.promoBadge strong {
+  display: block;
+  font-size: 3rem;
+  line-height: 1;
+  margin-bottom: 0.35rem;
+}
+
+.promoBadge span {
+  font-weight: 700;
+  opacity: 0.9;
+}
+
+@media (max-width: 1100px) {
+  .promoCard {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 760px) {
+  .promoActions {
+    justify-items: stretch;
+  }
+
+  .promoBadge {
+    min-width: 0;
+    width: 100%;
+  }
+}

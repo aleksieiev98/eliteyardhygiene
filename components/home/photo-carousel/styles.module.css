@@ -1,0 +1,85 @@
+.sectionHeading {
+  max-width: 740px;
+  margin-bottom: 2.5rem;
+}
+
+.sectionHeading h2 {
+  margin: 0;
+  font-family: var(--font-display), serif;
+  line-height: 0.96;
+  letter-spacing: -0.03em;
+  font-size: clamp(2.4rem, 5vw, 4.4rem);
+}
+
+.sectionHeading p {
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.carouselSection {
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.6), rgba(246, 243, 234, 0.85)),
+    radial-gradient(circle at left center, rgba(223, 158, 100, 0.1), transparent 28%);
+}
+
+.photoCarousel {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(280px, 32%);
+  gap: 1.2rem;
+  overflow-x: auto;
+  padding: 0.3rem 0.3rem 0.9rem;
+  scroll-padding-inline: 0.3rem;
+  scroll-snap-type: x proximity;
+}
+
+.photoCarousel::-webkit-scrollbar {
+  height: 10px;
+}
+
+.photoCarousel::-webkit-scrollbar-thumb {
+  background: rgba(23, 49, 38, 0.18);
+  border-radius: 999px;
+}
+
+.photoSlide {
+  overflow: hidden;
+  scroll-snap-align: start;
+  border: 1px solid rgba(23, 49, 38, 0.08);
+  border-radius: var(--radius-xl);
+  background: rgba(255, 255, 255, 0.86);
+  box-shadow: var(--shadow-md);
+}
+
+.photoSlideImage {
+  position: relative;
+  min-height: 360px;
+}
+
+.imageCover {
+  object-fit: cover;
+}
+
+.photoSlideCopy {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 1rem 1.1rem 1.2rem;
+  font-weight: 700;
+}
+
+@media (max-width: 1100px) {
+  .photoCarousel {
+    grid-auto-columns: minmax(280px, 72%);
+  }
+}
+
+@media (max-width: 760px) {
+  .photoCarousel {
+    grid-auto-columns: 82%;
+  }
+
+  .photoSlideImage {
+    min-height: 280px;
+  }
+}

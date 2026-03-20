@@ -1,6 +1,11 @@
 "use client";
 
+import { clsx } from "clsx";
 import { FormEvent, useState } from "react";
+
+import shared from "@/styles/shared.module.css";
+
+import styles from "./styles.module.css";
 
 const initialState = {
   name: "",
@@ -10,7 +15,7 @@ const initialState = {
   details: "",
 };
 
-export function QuoteForm() {
+export const QuoteForm = () => {
   const [form, setForm] = useState(initialState);
   const [status, setStatus] = useState<{
     type: "idle" | "success" | "error";
@@ -62,8 +67,8 @@ export function QuoteForm() {
   }
 
   return (
-    <form className="quote-form" onSubmit={handleSubmit}>
-      <div className="form-grid">
+    <form className={styles.quoteForm} onSubmit={handleSubmit}>
+      <div className={styles.formGrid}>
         <label>
           Name
           <input
@@ -130,18 +135,22 @@ export function QuoteForm() {
           placeholder="Tell us your yard size, number of dogs, gate access details, and preferred start date."
         />
       </label>
-      <button type="submit" className="button button-primary button-full">
+      <button
+        type="submit"
+        className={clsx(shared.button, shared.buttonPrimary, shared.buttonFull)}
+      >
         {submitting ? "Sending..." : "Request My Free Quote"}
       </button>
       {status.type !== "idle" ? (
         <p
-          className={`form-message ${
-            status.type === "success" ? "success" : "error"
-          }`}
+          className={clsx(
+            styles.formMessage,
+            status.type === "success" ? styles.success : styles.error
+          )}
         >
           {status.message}
         </p>
       ) : null}
     </form>
   );
-}
+};

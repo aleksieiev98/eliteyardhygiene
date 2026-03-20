@@ -1,0 +1,117 @@
+.comparisonCard {
+  overflow: hidden;
+  border: 1px solid rgba(23, 49, 38, 0.08);
+  border-radius: var(--radius-xl);
+  background: rgba(255, 255, 255, 0.86);
+  box-shadow: var(--shadow-md);
+  backdrop-filter: blur(14px);
+}
+
+.comparisonVisual {
+  position: relative;
+  min-height: 320px;
+  touch-action: none;
+  user-select: none;
+}
+
+.comparisonImage {
+  object-fit: cover;
+}
+
+.comparisonAfter {
+  position: absolute;
+  inset: 0;
+}
+
+.comparisonDivider {
+  position: absolute;
+  inset: 0 auto 0 50%;
+  width: 2px;
+  padding: 0;
+  border: 0;
+  background: rgba(255, 255, 255, 0.96);
+  cursor: ew-resize;
+  transform: translateX(-50%);
+}
+
+.comparisonDivider:focus-visible {
+  outline: none;
+}
+
+.comparisonHandle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: grid;
+  place-items: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 999px;
+  background: #fff;
+  box-shadow: var(--shadow-md);
+  transform: translate(-50%, -50%);
+}
+
+.handleArrows {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.handleArrows span {
+  width: 8px;
+  height: 8px;
+  border-top: 2px solid var(--green-800);
+}
+
+.handleArrows span:first-child {
+  border-left: 2px solid var(--green-800);
+  transform: rotate(-45deg);
+}
+
+.handleArrows span:last-child {
+  border-right: 2px solid var(--green-800);
+  transform: rotate(45deg);
+}
+
+.comparisonDivider:focus-visible .comparisonHandle {
+  box-shadow: 0 0 0 4px rgba(33, 91, 58, 0.18), var(--shadow-md);
+}
+
+.comparisonBadges {
+  position: absolute;
+  inset: auto 1rem 1rem 1rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.comparisonBadges span {
+  padding: 0.5rem 0.8rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.9);
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+
+.comparisonCopy {
+  padding: 1.35rem;
+}
+
+.comparisonCopy h3 {
+  margin: 0 0 0.6rem;
+}
+
+.comparisonCopy p,
+.comparisonHint {
+  color: var(--muted);
+}
+
+.comparisonHint {
+  margin: 1rem 0 0;
+}
+
+@media (max-width: 760px) {
+  .comparisonVisual {
+    min-height: 280px;
+  }
+}

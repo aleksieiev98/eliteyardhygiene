@@ -3,7 +3,7 @@
 import { useEffect } from "react";
 import { usePathname } from "next/navigation";
 
-export function ScrollEffects() {
+export const ScrollEffects = () => {
   const pathname = usePathname();
 
   useEffect(() => {
@@ -29,4 +29,4 @@ export function ScrollEffects() {
   }, [pathname]);
 
   return null;
-}
+};

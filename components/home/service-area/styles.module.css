@@ -1,0 +1,73 @@
+.splitPanel {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 2rem;
+}
+
+.panelCopy h2 {
+  margin: 0;
+  font-family: var(--font-display), serif;
+  line-height: 0.96;
+  letter-spacing: -0.03em;
+  font-size: clamp(2.4rem, 5vw, 4.4rem);
+}
+
+.panelCopy p,
+.mapPlaceholder p {
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.areaTags {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.areaTags span {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  border-radius: 999px;
+  padding: 0.7rem 0.95rem;
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(23, 49, 38, 0.09);
+  color: var(--green-900);
+  font-weight: 600;
+  box-shadow: 0 8px 16px rgba(23, 49, 38, 0.04);
+}
+
+.mapCard {
+  padding: 1.4rem;
+  border: 1px solid rgba(23, 49, 38, 0.08);
+  border-radius: var(--radius-xl);
+  background: rgba(255, 255, 255, 0.86);
+  box-shadow: var(--shadow-md);
+  backdrop-filter: blur(14px);
+}
+
+.mapPlaceholder {
+  min-height: 320px;
+  display: grid;
+  place-items: center;
+  gap: 0.6rem;
+  padding: 2rem;
+  text-align: center;
+  border-radius: calc(var(--radius-xl) - 6px);
+  background:
+    linear-gradient(135deg, rgba(91, 143, 114, 0.14), rgba(223, 158, 100, 0.12)),
+    repeating-linear-gradient(
+      45deg,
+      rgba(255, 255, 255, 0.45),
+      rgba(255, 255, 255, 0.45) 12px,
+      rgba(255, 255, 255, 0.2) 12px,
+      rgba(255, 255, 255, 0.2) 24px
+    );
+}
+
+@media (max-width: 1100px) {
+  .splitPanel {
+    grid-template-columns: 1fr;
+  }
+}

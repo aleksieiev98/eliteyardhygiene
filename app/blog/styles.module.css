@@ -1,0 +1,215 @@
+.blogPage {
+  padding-bottom: 6rem;
+}
+
+.blogHeroSection,
+.blogListSection,
+.blogArticleSection {
+  padding: 6rem 0;
+  border-top: 1px solid rgba(23, 49, 38, 0.06);
+}
+
+.blogHeroSection {
+  border-top: 0;
+}
+
+.blogTitle,
+.articleHeader h1 {
+  margin: 0;
+  font-family: var(--font-display), serif;
+  font-size: clamp(3rem, 7vw, 5.8rem);
+  line-height: 0.96;
+  letter-spacing: -0.03em;
+}
+
+.sectionHeading {
+  max-width: 740px;
+  margin-bottom: 2.5rem;
+}
+
+.sectionHeading p,
+.featuredPostCopy p,
+.blogCard p,
+.articleHeader p,
+.articleSection p,
+.articleCta p {
+  color: var(--muted);
+  line-height: 1.75;
+}
+
+.featuredPostCard,
+.blogCard,
+.articleShell,
+.articleCta {
+  border: 1px solid rgba(23, 49, 38, 0.08);
+  border-radius: var(--radius-xl);
+  background: rgba(255, 255, 255, 0.8);
+  box-shadow: var(--shadow-md);
+}
+
+.featuredPostCard {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  overflow: hidden;
+}
+
+.featuredPostCopy,
+.articleShell {
+  padding: 2rem;
+}
+
+.featuredPostVisual {
+  position: relative;
+  min-height: 420px;
+}
+
+.imageCover {
+  object-fit: cover;
+}
+
+.blogListHeader {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.blogSearchNote,
+.blogMeta,
+.blogDate,
+.articleBack,
+.keywordRow {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+
+.blogSearchNote,
+.blogDate,
+.articleBack {
+  color: var(--muted);
+  font-weight: 600;
+}
+
+.blogMeta {
+  margin-bottom: 0.85rem;
+}
+
+.blogMeta span,
+.keywordRow span,
+.articleQuestion {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.5rem 0.8rem;
+  border-radius: 999px;
+  background: linear-gradient(135deg, rgba(255, 246, 239, 0.96), rgba(238, 244, 236, 0.96));
+  color: var(--green-700);
+  font-size: 0.88rem;
+  font-weight: 700;
+  border: 1px solid rgba(216, 137, 70, 0.14);
+}
+
+.keywordRow {
+  margin: 1.25rem 0 1.5rem;
+}
+
+.featuredPostCopy h2,
+.blogCard h3,
+.articleSection h2,
+.articleCta h3 {
+  margin: 0 0 0.8rem;
+  font-family: var(--font-display), serif;
+  line-height: 1;
+  letter-spacing: -0.03em;
+}
+
+.featuredPostCopy h2 {
+  font-size: clamp(2.4rem, 5vw, 4rem);
+}
+
+.blogTitleLink {
+  color: inherit;
+  text-decoration: none;
+  transition: color 180ms ease;
+}
+
+.blogTitleLink:hover {
+  color: var(--green-700);
+}
+
+.blogGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.4rem;
+}
+
+.blogCard {
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem;
+}
+
+.blogCardFooter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: auto;
+}
+
+.articleShell {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.articleBack {
+  margin-bottom: 1.5rem;
+}
+
+.articleHeader {
+  padding-bottom: 1.75rem;
+  border-bottom: 1px solid rgba(23, 49, 38, 0.08);
+}
+
+.articleContent {
+  display: grid;
+  gap: 2rem;
+  padding: 2rem 0;
+}
+
+.articleSection h2 {
+  font-size: clamp(2rem, 4vw, 3rem);
+}
+
+.articleQuestion {
+  margin-top: 1.2rem;
+}
+
+.articleCta {
+  padding: 1.5rem;
+}
+
+@media (max-width: 1100px) {
+  .blogGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .featuredPostCard {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 760px) {
+  .blogGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .blogListHeader,
+  .blogCardFooter {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

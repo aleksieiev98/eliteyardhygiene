@@ -1,0 +1,159 @@
+.heroSection {
+  padding: 3rem 0 4rem;
+  border-top: 0;
+}
+
+.heroGrid {
+  display: grid;
+  grid-template-columns: 1.08fr 0.92fr;
+  align-items: center;
+  gap: 3rem;
+}
+
+.heroCopy h1 {
+  margin: 0;
+  font-family: var(--font-display), serif;
+  line-height: 0.96;
+  letter-spacing: -0.03em;
+  font-size: clamp(3.2rem, 7vw, 5.8rem);
+  max-width: 16ch;
+}
+
+.heroText {
+  max-width: 56ch;
+  margin: 1.5rem 0 0;
+  font-size: 1.08rem;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.ctaRow,
+.pillRow,
+.microProof {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.ctaRow {
+  margin-top: 2rem;
+  margin-bottom: 0.35rem;
+}
+
+.heroProofStack {
+  margin-top: 2.15rem;
+}
+
+.heroProofStack .pillRow {
+  margin: 0 0 1rem;
+}
+
+.trustPill,
+.microProof span {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  border-radius: 999px;
+  padding: 0.7rem 0.95rem;
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(23, 49, 38, 0.09);
+  color: var(--green-900);
+  font-weight: 600;
+  box-shadow: 0 8px 16px rgba(23, 49, 38, 0.04);
+}
+
+.microProof {
+  gap: 0.85rem;
+}
+
+.heroVisual {
+  position: relative;
+}
+
+.heroBadge {
+  position: absolute;
+  top: 1rem;
+  left: -0.5rem;
+  z-index: 2;
+  padding: 0.7rem 1rem;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #214634, var(--green-700));
+  color: #fff;
+  font-weight: 700;
+  box-shadow: var(--shadow-md);
+}
+
+.heroCard {
+  overflow: hidden;
+  border: 1px solid rgba(23, 49, 38, 0.08);
+  border-radius: var(--radius-xl);
+  background: rgba(255, 255, 255, 0.86);
+  box-shadow: var(--shadow-md);
+  backdrop-filter: blur(14px);
+}
+
+.heroImageWrap {
+  position: relative;
+  min-height: 540px;
+}
+
+.heroImage {
+  object-fit: cover;
+}
+
+.heroCardFooter {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.3rem 1.4rem 1.5rem;
+  background: linear-gradient(180deg, rgba(255,255,255,0.96), rgba(243,246,240,0.94));
+}
+
+.heroCardFooter p,
+.miniStat small {
+  color: var(--muted);
+}
+
+.miniStat {
+  min-width: 116px;
+  padding: 0.9rem;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.92);
+  text-align: right;
+}
+
+.miniStat span {
+  display: block;
+  font-size: 1.6rem;
+  line-height: 1;
+  font-weight: 800;
+}
+
+@media (max-width: 1100px) {
+  .heroGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .heroCopy h1 {
+    max-width: 12ch;
+  }
+}
+
+@media (max-width: 760px) {
+  .heroSection {
+    padding: 4.5rem 0;
+  }
+
+  .heroCopy h1 {
+    font-size: clamp(2.8rem, 14vw, 4rem);
+  }
+
+  .heroCardFooter {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .heroImageWrap {
+    min-height: 280px;
+  }
+}

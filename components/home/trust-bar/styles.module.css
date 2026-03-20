@@ -1,0 +1,57 @@
+.trustBar {
+  padding-bottom: 1rem;
+}
+
+.trustBarInner {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 2rem;
+  align-items: stretch;
+}
+
+.statCard,
+.reviewLogos {
+  min-height: 116px;
+  padding: 1.35rem;
+  justify-content: center;
+}
+
+.statCard {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  border: 1px solid rgba(23, 49, 38, 0.08);
+  border-radius: var(--radius-xl);
+  background: rgba(255, 255, 255, 0.86);
+  box-shadow: var(--shadow-md);
+  backdrop-filter: blur(14px);
+}
+
+.statCard strong {
+  display: block;
+  font-size: 1.6rem;
+  line-height: 1;
+  font-weight: 800;
+}
+
+.statCard span,
+.reviewLogos span {
+  color: var(--muted);
+}
+
+.reviewLogos {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.92), rgba(244, 249, 243, 0.94));
+  border-radius: var(--radius-xl);
+  border: 1px dashed rgba(23, 49, 38, 0.18);
+  font-weight: 700;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 1100px) {
+  .trustBarInner {
+    grid-template-columns: 1fr;
+  }
+}

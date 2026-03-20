@@ -1,0 +1,49 @@
+.sectionHeading {
+  max-width: 740px;
+  margin-bottom: 2.5rem;
+}
+
+.sectionHeading h2 {
+  margin: 0;
+  font-family: var(--font-display), serif;
+  line-height: 0.96;
+  letter-spacing: -0.03em;
+  font-size: clamp(2.4rem, 5vw, 4.4rem);
+}
+
+.stepsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.4rem;
+}
+
+.stepCard {
+  position: relative;
+  min-height: 220px;
+  padding: 1.5rem;
+  border: 1px solid rgba(23, 49, 38, 0.08);
+  border-radius: var(--radius-xl);
+  background: rgba(255, 255, 255, 0.86);
+  box-shadow: var(--shadow-md);
+  backdrop-filter: blur(14px);
+}
+
+.stepCard p {
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.stepIndex {
+  display: inline-flex;
+  margin-bottom: 1.4rem;
+  color: var(--accent);
+  font-weight: 800;
+  font-size: 0.95rem;
+  letter-spacing: 0.08em;
+}
+
+@media (max-width: 760px) {
+  .stepsGrid {
+    grid-template-columns: 1fr;
+  }
+}

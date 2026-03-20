@@ -1,0 +1,130 @@
+.sectionHeading {
+  max-width: 740px;
+  margin-bottom: 2.5rem;
+}
+
+.sectionHeading h2 {
+  margin: 0;
+  font-family: var(--font-display), serif;
+  line-height: 0.96;
+  letter-spacing: -0.03em;
+  font-size: clamp(2.4rem, 5vw, 4.4rem);
+}
+
+.sectionHeading p,
+.pricingCard p,
+.pricingCard span,
+.addonsCard p {
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.pricingGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.4rem;
+}
+
+.pricingCard {
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem;
+  border: 1px solid rgba(23, 49, 38, 0.08);
+  border-radius: var(--radius-xl);
+  background: rgba(255, 255, 255, 0.86);
+  box-shadow: var(--shadow-md);
+  backdrop-filter: blur(14px);
+}
+
+.featured {
+  position: relative;
+  background: linear-gradient(180deg, rgba(255,255,255,0.96), rgba(238, 244, 236, 0.92));
+  transform: translateY(-8px);
+}
+
+.pricingCardTop {
+  display: grid;
+}
+
+.pricingBadgeRow {
+  min-height: 2rem;
+  margin-bottom: 1rem;
+}
+
+.pricingBadge {
+  display: inline-flex;
+  padding: 0.45rem 0.8rem;
+  border-radius: 999px;
+  background: linear-gradient(135deg, rgba(216, 137, 70, 0.24), rgba(255, 244, 235, 0.98));
+  color: var(--accent-strong);
+  font-size: 0.8rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  border: 1px solid rgba(216, 137, 70, 0.24);
+}
+
+.pricingBadgePlaceholder {
+  visibility: hidden;
+}
+
+.priceLine {
+  display: flex;
+  align-items: baseline;
+  gap: 0.55rem;
+  margin: 1rem 0;
+}
+
+.priceLine strong {
+  display: block;
+  font-size: 1.6rem;
+  line-height: 1;
+  font-weight: 800;
+}
+
+.pricingCard ul {
+  padding: 0;
+  margin: 0 0 auto;
+  list-style: none;
+}
+
+.pricingCard li {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.pricingCard li + li {
+  margin-top: 0.75rem;
+}
+
+.addonsCard {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  padding: 1.4rem;
+  border: 1px solid rgba(23, 49, 38, 0.08);
+  border-radius: var(--radius-xl);
+  background: rgba(255, 255, 255, 0.86);
+  box-shadow: var(--shadow-md);
+  backdrop-filter: blur(14px);
+}
+
+@media (max-width: 1100px) {
+  .pricingGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 760px) {
+  .pricingGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .addonsCard {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

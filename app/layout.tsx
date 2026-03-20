@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
 import { Cormorant_Garamond, Urbanist } from "next/font/google";
 import type { ReactNode } from "react";
+
 import { ScrollEffects } from "@/components/scroll-effects";
 import { SiteChrome } from "@/components/site-chrome";
+
 import "./globals.css";
 
 const display = Cormorant_Garamond({
@@ -38,7 +40,7 @@ export default function RootLayout({
   children: ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" data-scroll-behavior="smooth">
       <body className={`${display.variable} ${sans.variable}`}>
         <ScrollEffects />
         <SiteChrome />
