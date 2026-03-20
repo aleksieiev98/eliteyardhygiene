@@ -28,6 +28,25 @@
   background: rgba(255, 255, 255, 0.9);
   color: var(--text);
   font: inherit;
+  transition:
+    border-color 180ms ease,
+    box-shadow 180ms ease,
+    background 180ms ease;
+}
+
+.quoteForm input:hover,
+.quoteForm textarea:hover,
+.quoteForm select:hover {
+  border-color: rgba(23, 49, 38, 0.26);
+  background: rgba(255, 255, 255, 0.96);
+}
+
+.quoteForm input:focus-visible,
+.quoteForm textarea:focus-visible,
+.quoteForm select:focus-visible {
+  border-color: rgba(23, 49, 38, 0.34);
+  box-shadow: 0 0 0 4px rgba(216, 137, 70, 0.14);
+  background: #fff;
 }
 
 .quoteForm textarea {

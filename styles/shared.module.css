@@ -13,11 +13,20 @@
   transition:
     transform 180ms ease,
     box-shadow 180ms ease,
-    background 180ms ease;
+    background 180ms ease,
+    border-color 180ms ease,
+    color 180ms ease;
 }
 
 .button:hover {
   transform: translateY(-1px);
+}
+
+.button:focus-visible {
+  transform: translateY(-1px);
+  box-shadow:
+    0 0 0 4px rgba(216, 137, 70, 0.18),
+    0 18px 36px rgba(23, 49, 38, 0.16);
 }
 
 .button:disabled {
@@ -35,11 +44,22 @@
   box-shadow: 0 22px 42px rgba(23, 49, 38, 0.22);
 }
 
+.buttonPrimary:hover {
+  background: linear-gradient(135deg, #123021, var(--green-800));
+  box-shadow: 0 24px 46px rgba(23, 49, 38, 0.24);
+}
+
 .buttonSecondary {
   color: var(--green-900);
   background: rgba(255, 255, 255, 0.94);
   border: 1px solid rgba(23, 49, 38, 0.2);
   box-shadow: 0 16px 28px rgba(23, 49, 38, 0.1);
+}
+
+.buttonSecondary:hover {
+  background: rgba(255, 255, 255, 0.99);
+  border-color: rgba(23, 49, 38, 0.28);
+  box-shadow: 0 18px 30px rgba(23, 49, 38, 0.12);
 }
 
 .eyebrow {
@@ -69,4 +89,17 @@
   margin-top: 0.8rem;
   color: var(--green-700);
   font-weight: 700;
+  transition:
+    color 180ms ease,
+    transform 180ms ease;
+}
+
+.inlineLink:hover {
+  color: var(--green-900);
+  transform: translateX(2px);
+}
+
+.inlineLink:focus-visible {
+  color: var(--green-900);
+  transform: translateX(2px);
 }

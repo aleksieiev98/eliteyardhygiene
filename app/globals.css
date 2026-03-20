@@ -59,8 +59,19 @@ main {
 }
 
 .section {
+  position: relative;
   padding: 6rem 0;
-  border-top: 1px solid rgba(23, 49, 38, 0.06);
+}
+
+.section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: min(var(--container), calc(100% - 2rem));
+  height: 1px;
+  background: rgba(23, 49, 38, 0.06);
+  transform: translateX(-50%);
 }
 
 .muted-section {
@@ -103,6 +114,10 @@ a:focus-visible {
 @media (max-width: 760px) {
   .section {
     padding: 4.5rem 0;
+  }
+
+  .section::before {
+    width: min(var(--container), calc(100% - 1.25rem));
   }
 
   .container {

@@ -56,15 +56,33 @@
   border: 1px solid rgba(23, 49, 38, 0.08);
   border-radius: var(--radius-xl);
   background: rgba(255, 255, 255, 0.86);
+  transition:
+    transform 220ms ease,
+    box-shadow 220ms ease,
+    border-color 220ms ease;
+}
+
+.photoSlide:hover,
+.photoSlide:focus-within {
+  transform: translateY(-3px);
+  border-color: rgba(23, 49, 38, 0.14);
+  box-shadow: 0 24px 42px rgba(23, 49, 38, 0.14);
 }
 
 .photoSlideImage {
   position: relative;
   min-height: 360px;
+  overflow: hidden;
 }
 
 .imageCover {
   object-fit: cover;
+  transition: transform 800ms ease;
+}
+
+.photoSlide:hover .imageCover,
+.photoSlide:focus-within .imageCover {
+  transform: scale(1.04);
 }
 
 .photoSlideCopy {

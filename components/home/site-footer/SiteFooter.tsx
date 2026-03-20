@@ -1,8 +1,11 @@
 import { clsx } from "clsx";
-import { Facebook } from "lucide-react";
+import { Facebook, Instagram, MapPinned, Music2 } from "lucide-react";
 import Link from "next/link";
 
 import styles from "./styles.module.css";
+
+const socialHref =
+  "https://www.facebook.com/people/Elite-Yard-Hygiene-LLC/61588401130622";
 
 export const SiteFooter = () => {
   return (
@@ -35,12 +38,36 @@ export const SiteFooter = () => {
           <h4>Follow</h4>
           <div className={styles.socials}>
             <a
-              href="https://www.facebook.com/people/Elite-Yard-Hygiene-LLC/61588401130622"
+              href={socialHref}
               aria-label="Facebook"
               target="_blank"
               rel="noreferrer"
             >
               <Facebook size={18} />
+            </a>
+            <a
+              href={socialHref}
+              aria-label="Instagram"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <Instagram size={18} />
+            </a>
+            <a
+              href={socialHref}
+              aria-label="TikTok"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <Music2 size={18} />
+            </a>
+            <a
+              href={socialHref}
+              aria-label="Google Business Profile"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <MapPinned size={18} />
             </a>
           </div>
         </div>

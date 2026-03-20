@@ -48,6 +48,10 @@
   display: grid;
 }
 
+.pricingCardTop h3 {
+  margin-top: 0;
+}
+
 .pricingBadge {
   position: absolute;
   top: 1rem;
@@ -100,7 +104,7 @@
 }
 
 .pricingButton {
-  margin-top: 1.5rem;
+  margin-top: 1.75rem;
 }
 
 @media (max-width: 1100px) {

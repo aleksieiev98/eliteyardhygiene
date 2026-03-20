@@ -13,17 +13,20 @@ export const SiteChrome = () => {
     <>
       <header className={styles.siteHeader}>
         <div className={clsx("container", styles.headerInner)}>
-          <Link href="/" className={styles.brand}>
-            <span className={styles.brandMark}>
-              <Dog size={24} />
-            </span>
-            <span>
-              Elite Yard Hygiene
-              <small className={styles.brandSmall}>
-                Premium pet waste removal
-              </small>
-            </span>
-          </Link>
+          <div className={styles.headerBrandArea}>
+            <Link href="/" className={styles.brand}>
+              <span className={styles.brandMark}>
+                <Dog size={24} />
+              </span>
+              <span>
+                Elite Yard Hygiene
+                <small className={styles.brandSmall}>
+                  Premium pet waste removal
+                </small>
+              </span>
+            </Link>
+          </div>
+
           <nav className={styles.desktopNav} aria-label="Primary">
             <Link href="/#services" className={styles.desktopNavLink}>
               Services
@@ -40,6 +43,9 @@ export const SiteChrome = () => {
             <Link href="/blog" className={styles.desktopNavLink}>
               Blog
             </Link>
+          </nav>
+
+          <div className={styles.headerActions}>
             <a
               href={phoneHref}
               className={clsx(
@@ -62,7 +68,7 @@ export const SiteChrome = () => {
               <ClipboardList size={16} />
               Get a Free Quote
             </Link>
-          </nav>
+          </div>
         </div>
       </header>
 

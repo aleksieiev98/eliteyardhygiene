@@ -9,9 +9,16 @@
 
 .headerInner {
   min-height: 78px;
-  display: flex;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
   align-items: center;
-  justify-content: space-between;
+  gap: 1.5rem;
+}
+
+.headerBrandArea {
+  display: flex;
+  justify-content: flex-start;
+  min-width: 0;
 }
 
 .brand {
@@ -19,6 +26,12 @@
   align-items: center;
   gap: 0.9rem;
   font-weight: 700;
+  min-width: 0;
+  transition: transform 180ms ease;
+}
+
+.brand:hover {
+  transform: translateY(-1px);
 }
 
 .brandSmall {
@@ -37,17 +50,46 @@
   color: #fff;
   background: linear-gradient(135deg, var(--green-900), var(--green-500));
   box-shadow: var(--shadow-md);
+  flex: 0 0 auto;
+  transition:
+    transform 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.brand:hover .brandMark,
+.brand:focus-visible .brandMark {
+  transform: scale(1.04);
+  box-shadow: 0 20px 36px rgba(23, 49, 38, 0.18);
 }
 
 .desktopNav {
   display: flex;
   align-items: center;
-  gap: 1rem;
+  justify-content: center;
+  gap: 1.35rem;
   font-weight: 600;
 }
 
 .desktopNavLink {
   color: var(--muted);
+  text-align: center;
+  white-space: nowrap;
+  transition:
+    color 180ms ease,
+    transform 180ms ease;
+}
+
+.desktopNavLink:hover,
+.desktopNavLink:focus-visible {
+  color: var(--green-900);
+  transform: translateY(-1px);
+}
+
+.headerActions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.65rem;
 }
 
 .headerAction {
@@ -77,6 +119,18 @@
   color: var(--muted);
   font-weight: 700;
   font-size: 0.92rem;
+  transition:
+    color 180ms ease,
+    background 180ms ease,
+    transform 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.floatingNavLink:hover,
+.floatingNavLink:focus-visible {
+  color: var(--green-900);
+  background: rgba(23, 49, 38, 0.06);
+  transform: translateY(-1px);
 }
 
 .floatingNavSecondary {
@@ -84,14 +138,46 @@
   color: var(--green-900);
 }
 
+.floatingNavSecondary:hover,
+.floatingNavSecondary:focus-visible {
+  background: rgba(23, 49, 38, 0.12);
+}
+
 .floatingNavCta {
   color: #fff !important;
   background: linear-gradient(135deg, #143628, var(--green-700));
 }
 
+.floatingNavCta:hover,
+.floatingNavCta:focus-visible {
+  color: #fff !important;
+  background: linear-gradient(135deg, #123021, var(--green-800));
+  box-shadow: 0 16px 28px rgba(23, 49, 38, 0.18);
+}
+
+@media (max-width: 1180px) {
+  .headerInner {
+    grid-template-columns: auto 1fr auto;
+    gap: 1.1rem;
+  }
+
+  .desktopNav {
+    gap: 1rem;
+  }
+}
+
 @media (max-width: 980px) {
-  .desktopNavLink {
+  .headerInner {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .desktopNav {
     display: none;
+  }
+
+  .headerActions {
+    justify-content: flex-end;
   }
 }
 
