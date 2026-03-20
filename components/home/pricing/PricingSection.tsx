@@ -25,6 +25,8 @@ const pricing = [
     description: "The easy way to keep your yard fresh all season long.",
     features: [
       "Scheduled weekly visit",
+      "Pet-safe deodorizing",
+      "Dog spot lawn treatment",
       "Visit notifications",
       "Most popular recurring plan",
     ],
@@ -99,28 +101,14 @@ export const PricingSection = () => {
                 className={clsx(
                   shared.button,
                   shared.buttonPrimary,
-                  shared.buttonFull
+                  shared.buttonFull,
+                  styles.pricingButton
                 )}
               >
                 Get a Free Quote
               </Link>
             </article>
           ))}
-        </div>
-        <div className={styles.addonsCard} data-reveal>
-          <div>
-            <h3>Optional add-ons</h3>
-            <p>
-              Multi-dog add-on from <strong>$12/week</strong>. Pet-safe
-              deodorizing from <strong>$18/visit</strong>.
-            </p>
-          </div>
-          <Link
-            href="#quote"
-            className={clsx(shared.button, shared.buttonSecondary)}
-          >
-            Ask About Add-Ons
-          </Link>
         </div>
       </div>
     </section>

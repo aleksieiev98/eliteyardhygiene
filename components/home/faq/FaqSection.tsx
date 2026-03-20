@@ -23,7 +23,7 @@ const faqs = [
   {
     question: "Do you clean with dogs in the yard?",
     answer:
-      "Friendly dogs are usually fine. If a pet is anxious or protective, we may ask that they stay inside for everyone's comfort.",
+      "No. For safety and a smoother cleanup, pets should be kept inside while we service the yard.",
   },
   {
     question: "How do billing and scheduling work?",
@@ -38,7 +38,7 @@ const faqs = [
   {
     question: "What areas do you serve?",
     answer:
-      "We serve families across Brookhaven, Cedar Park, Willow Creek, Maple Heights, and nearby neighborhoods throughout the local metro.",
+      "We serve homeowners in Buffalo Grove, Wheeling, Palatine, Arlington Heights, Mount Prospect, Des Plaines, Schaumburg, Elk Grove Village, Hoffman Estates, and nearby northwest suburbs.",
   },
   {
     question: "Do you disinfect tools between visits?",

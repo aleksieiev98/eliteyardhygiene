@@ -13,8 +13,7 @@
 
 .sectionHeading p,
 .pricingCard p,
-.pricingCard span,
-.addonsCard p {
+.pricingCard span {
   color: var(--muted);
   line-height: 1.7;
 }
@@ -106,18 +105,8 @@
   margin-top: 0.75rem;
 }
 
-.addonsCard {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
-  margin-top: 1.5rem;
-  padding: 1.4rem;
-  border: 1px solid rgba(23, 49, 38, 0.08);
-  border-radius: var(--radius-xl);
-  background: rgba(255, 255, 255, 0.86);
-  box-shadow: var(--shadow-md);
-  backdrop-filter: blur(14px);
+.pricingButton {
+  margin-top: 1.25rem;
 }
 
 @media (max-width: 1100px) {
@@ -129,10 +118,5 @@
 @media (max-width: 760px) {
   .pricingGrid {
     grid-template-columns: 1fr;
-  }
-
-  .addonsCard {
-    flex-direction: column;
-    align-items: flex-start;
   }
 }

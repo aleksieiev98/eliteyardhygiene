@@ -21,13 +21,13 @@ export const FinalCtaSection = () => {
             for your yard size, pets, and schedule.
           </p>
           <div className={styles.contactList}>
-            <a href="tel:5555550145">
+            <a href="tel:2246009367">
               <Phone size={18} />
-              (555) 555-0145
+              (224) 600-9367
             </a>
-            <a href="mailto:hello@eliteyardhygiene.com">
+            <a href="mailto:eliteyardhygiene@gmail.com">
               <Mail size={18} />
-              hello@eliteyardhygiene.com
+              eliteyardhygiene@gmail.com
             </a>
           </div>
         </div>

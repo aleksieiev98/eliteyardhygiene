@@ -98,7 +98,7 @@ export const QuoteForm = () => {
           Email
           <input
             type="email"
-            placeholder="jordan@email.com"
+            placeholder="eliteyardhygiene@gmail.com"
             {...register("email", {
               required: "Please enter your email.",
               pattern: {
@@ -115,7 +115,7 @@ export const QuoteForm = () => {
           Phone
           <input
             type="tel"
-            placeholder="(555) 555-0145"
+            placeholder="(224) 600-9367"
             {...register("phone", {
               required: "Please enter your phone number.",
             })}
