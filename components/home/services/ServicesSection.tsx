@@ -78,7 +78,10 @@ export const ServicesSection = () => {
               </div>
               <h3>{title}</h3>
               <p>{copy}</p>
-              <Link href="#quote" className={shared.inlineLink}>
+              <Link
+                href="#quote"
+                className={`${shared.inlineLink} ${styles.serviceLink}`}
+              >
                 Request this service
               </Link>
             </article>

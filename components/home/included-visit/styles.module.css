@@ -1,0 +1,115 @@
+.splitPanel {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(320px, 0.75fr);
+  align-items: start;
+  gap: 3rem;
+}
+
+.panelCopy h2 {
+  margin: 0;
+  font-family: var(--font-display), serif;
+  line-height: 0.96;
+  letter-spacing: -0.03em;
+  font-size: clamp(2.4rem, 5vw, 4.4rem);
+}
+
+.intro {
+  max-width: 58ch;
+  margin: 1rem 0 0;
+  color: var(--muted);
+  line-height: 1.75;
+}
+
+.itemsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 1.75rem;
+}
+
+.itemCard {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.95rem;
+  min-height: 100%;
+  padding: 1.15rem;
+  border: 1px solid rgba(23, 49, 38, 0.08);
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.82);
+  box-shadow: var(--shadow-md);
+}
+
+.itemIcon {
+  display: grid;
+  place-items: center;
+  width: 2.35rem;
+  height: 2.35rem;
+  flex: 0 0 auto;
+  border-radius: 14px;
+  background: rgba(79, 154, 114, 0.14);
+  color: var(--green-900);
+}
+
+.itemCard h3,
+.panelCard h3 {
+  margin: 0;
+}
+
+.itemCard p,
+.panelCard p,
+.cardListItem span {
+  margin: 0.45rem 0 0;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.panelCard {
+  padding: 1.5rem;
+  border: 1px solid rgba(23, 49, 38, 0.1);
+  border-radius: var(--radius-xl);
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.96),
+    rgba(248, 251, 247, 0.9)
+  );
+  box-shadow: var(--shadow-lg);
+}
+
+.cardEyebrow {
+  display: inline-flex;
+  margin-bottom: 1rem;
+  padding: 0.38rem 0.7rem;
+  border-radius: 999px;
+  background: rgba(23, 49, 38, 0.08);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.cardList {
+  display: grid;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.cardListItem {
+  padding-top: 1rem;
+  border-top: 1px solid rgba(23, 49, 38, 0.08);
+}
+
+.cardListItem strong {
+  display: block;
+}
+
+@media (max-width: 1100px) {
+  .splitPanel {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 760px) {
+  .itemsGrid {
+    grid-template-columns: 1fr;
+  }
+}

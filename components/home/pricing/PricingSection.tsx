@@ -1,6 +1,6 @@
 import { clsx } from "clsx";
-import Link from "next/link";
 import { Check } from "lucide-react";
+import Link from "next/link";
 
 import shared from "@/styles/shared.module.css";
 
@@ -70,20 +70,10 @@ export const PricingSection = () => {
               )}
               data-reveal
             >
+              {tier.featured ? (
+                <span className={styles.pricingBadge}>Most Popular</span>
+              ) : null}
               <div className={styles.pricingCardTop}>
-                <div className={styles.pricingBadgeRow}>
-                  {tier.featured ? (
-                    <span className={styles.pricingBadge}>Most Popular</span>
-                  ) : (
-                    <span
-                      className={clsx(
-                        styles.pricingBadge,
-                        styles.pricingBadgePlaceholder
-                      )}
-                      aria-hidden="true"
-                    />
-                  )}
-                </div>
                 <h3>{tier.title}</h3>
                 <div className={styles.priceLine}>
                   <strong>{tier.price}</strong>

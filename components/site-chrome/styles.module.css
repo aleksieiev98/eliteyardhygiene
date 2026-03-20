@@ -42,7 +42,7 @@
 .desktopNav {
   display: flex;
   align-items: center;
-  gap: 1.5rem;
+  gap: 1rem;
   font-weight: 600;
 }
 
@@ -50,7 +50,7 @@
   color: var(--muted);
 }
 
-.headerCta {
+.headerAction {
   text-decoration: none;
 }
 
@@ -79,16 +79,23 @@
   font-size: 0.92rem;
 }
 
+.floatingNavSecondary {
+  background: rgba(23, 49, 38, 0.08);
+  color: var(--green-900);
+}
+
 .floatingNavCta {
   color: #fff !important;
   background: linear-gradient(135deg, #143628, var(--green-700));
 }
 
-@media (max-width: 760px) {
+@media (max-width: 980px) {
   .desktopNavLink {
     display: none;
   }
+}
 
+@media (max-width: 760px) {
   .headerInner {
     min-height: 72px;
   }
@@ -104,7 +111,7 @@
     padding-inline: 0.75rem;
   }
 
-  .headerCta {
+  .headerAction {
     width: 100%;
   }
 }

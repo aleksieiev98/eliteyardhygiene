@@ -1,0 +1,85 @@
+.page {
+  padding: 8rem 0 5rem;
+}
+
+.card {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 3rem;
+  border: 1px solid rgba(23, 49, 38, 0.08);
+  border-radius: 32px;
+  background: rgba(255, 255, 255, 0.88);
+  box-shadow: var(--shadow-md);
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.45rem 0.9rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid rgba(23, 49, 38, 0.08);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.title {
+  margin: 1rem 0 0;
+  font-family: var(--font-display), serif;
+  font-size: clamp(2.6rem, 5vw, 4.3rem);
+  line-height: 0.98;
+}
+
+.intro {
+  max-width: 62ch;
+  margin: 1rem 0 0;
+  color: var(--muted);
+  font-size: 1.05rem;
+  line-height: 1.75;
+}
+
+.meta {
+  margin: 1rem 0 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.content {
+  margin-top: 2.5rem;
+  display: grid;
+  gap: 2rem;
+}
+
+.content section {
+  display: grid;
+  gap: 0.85rem;
+}
+
+.content h2 {
+  margin: 0;
+  font-size: 1.3rem;
+}
+
+.content p,
+.content li {
+  color: var(--muted);
+  line-height: 1.75;
+}
+
+.content ul {
+  margin: 0;
+  padding-left: 1.15rem;
+}
+
+@media (max-width: 760px) {
+  .page {
+    padding: 7rem 0 4rem;
+  }
+
+  .card {
+    padding: 2rem 1.25rem;
+    border-radius: 24px;
+  }
+}

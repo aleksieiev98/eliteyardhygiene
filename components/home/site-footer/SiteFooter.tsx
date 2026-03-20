@@ -1,6 +1,6 @@
 import { clsx } from "clsx";
-import Link from "next/link";
 import { Facebook } from "lucide-react";
+import Link from "next/link";
 
 import styles from "./styles.module.css";
 
@@ -48,8 +48,8 @@ export const SiteFooter = () => {
       <div className={clsx("container", styles.footerBottom)}>
         <p>© 2026 Elite Yard Hygiene. All rights reserved.</p>
         <div className={styles.footerLinks}>
-          <Link href="/">Privacy Policy</Link>
-          <Link href="/">Terms</Link>
+          <Link href="/privacy-policy">Privacy Policy</Link>
+          <Link href="/terms">Terms</Link>
         </div>
       </div>
     </footer>

@@ -3,6 +3,7 @@ export { FaqSection } from "./faq";
 export { FinalCtaSection } from "./final-cta";
 export { GallerySection } from "./gallery";
 export { HeroSection } from "./hero";
+export { IncludedVisitSection } from "./included-visit";
 export { PhotoCarouselSection } from "./photo-carousel";
 export { PricingSection } from "./pricing";
 export { ProcessSection } from "./process";

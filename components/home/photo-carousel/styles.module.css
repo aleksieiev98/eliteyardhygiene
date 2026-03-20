@@ -56,7 +56,6 @@
   border: 1px solid rgba(23, 49, 38, 0.08);
   border-radius: var(--radius-xl);
   background: rgba(255, 255, 255, 0.86);
-  box-shadow: var(--shadow-md);
 }
 
 .photoSlideImage {

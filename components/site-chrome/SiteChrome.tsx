@@ -1,9 +1,12 @@
 import { clsx } from "clsx";
+import { ClipboardList, Dog, Phone } from "lucide-react";
 import Link from "next/link";
 
 import shared from "@/styles/shared.module.css";
 
 import styles from "./styles.module.css";
+
+const phoneHref = "tel:2246009367";
 
 export const SiteChrome = () => {
   return (
@@ -11,7 +14,9 @@ export const SiteChrome = () => {
       <header className={styles.siteHeader}>
         <div className={clsx("container", styles.headerInner)}>
           <Link href="/" className={styles.brand}>
-            <span className={styles.brandMark}>EY</span>
+            <span className={styles.brandMark}>
+              <Dog size={24} />
+            </span>
             <span>
               Elite Yard Hygiene
               <small className={styles.brandSmall}>
@@ -35,14 +40,26 @@ export const SiteChrome = () => {
             <Link href="/blog" className={styles.desktopNavLink}>
               Blog
             </Link>
+            <a
+              href={phoneHref}
+              className={clsx(
+                shared.button,
+                shared.buttonSecondary,
+                styles.headerAction
+              )}
+            >
+              <Phone size={16} />
+              Call
+            </a>
             <Link
               href="/#quote"
               className={clsx(
                 shared.button,
                 shared.buttonPrimary,
-                styles.headerCta
+                styles.headerAction
               )}
             >
+              <ClipboardList size={16} />
               Get a Free Quote
             </Link>
           </nav>
@@ -62,6 +79,12 @@ export const SiteChrome = () => {
         <Link href="/blog" className={styles.floatingNavLink}>
           Blog
         </Link>
+        <a
+          href={phoneHref}
+          className={clsx(styles.floatingNavLink, styles.floatingNavSecondary)}
+        >
+          Call
+        </a>
         <Link
           href="/#quote"
           className={clsx(styles.floatingNavLink, styles.floatingNavCta)}

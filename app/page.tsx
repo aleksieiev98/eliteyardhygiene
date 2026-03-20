@@ -4,6 +4,7 @@ import {
   FinalCtaSection,
   GallerySection,
   HeroSection,
+  IncludedVisitSection,
   PhotoCarouselSection,
   PricingSection,
   ProcessSection,
@@ -21,9 +22,10 @@ export default async function HomePage() {
       <HeroSection />
       <PromoSection />
       <GallerySection />
+      <ProcessSection />
       <PhotoCarouselSection />
       <ServicesSection />
-      <ProcessSection />
+      <IncludedVisitSection />
       <PricingSection />
       <WhyChooseUsSection />
       <TestimonialsSection />

@@ -71,7 +71,7 @@ export const HeroSection = () => {
                 <Star size={16} fill="currentColor" />
                 Trusted by nearby dog owners
               </span>
-              <span>Launch offer: first customers save 25%</span>
+              <span>Text alerts after every visit</span>
             </div>
           </div>
         </div>

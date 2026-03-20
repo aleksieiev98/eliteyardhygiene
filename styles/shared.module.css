@@ -3,9 +3,10 @@
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
+  min-height: 3.25rem;
   border: 0;
   border-radius: 999px;
-  padding: 1.02rem 1.55rem;
+  padding: 0.82rem 1.45rem;
   font-weight: 700;
   font-size: 1rem;
   cursor: pointer;
