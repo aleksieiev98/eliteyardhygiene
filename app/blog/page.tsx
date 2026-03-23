@@ -12,9 +12,18 @@ import styles from "./styles.module.css";
 export const revalidate = 3600;
 
 export const metadata: Metadata = {
-  title: "Pet Waste Removal Blog | Elite Yard Hygiene",
+  title: "Pet Waste Removal Blog",
   description:
     "SEO-focused answers to common pet waste removal questions, lawn hygiene tips, and local yard cleanup advice from Elite Yard Hygiene.",
+  alternates: {
+    canonical: "/blog",
+  },
+  openGraph: {
+    title: "Pet Waste Removal Blog | Elite Yard Hygiene",
+    description:
+      "Helpful answers about dog poop cleanup, sanitation, lawn care, and local pet waste removal.",
+    url: "https://eliteyardhygiene.com/blog",
+  },
 };
 
 const defaultFeaturedImage = {

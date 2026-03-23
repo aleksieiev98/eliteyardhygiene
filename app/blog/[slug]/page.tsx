@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import { BLOCKS, INLINES } from "@contentful/rich-text-types";
+import { ArrowLeft, CalendarDays, Clock3 } from "lucide-react";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ArrowLeft, CalendarDays, Clock3 } from "lucide-react";
 
+import { StructuredData } from "@/components/seo";
 import { getAllPosts, getPostBySlug } from "@/lib/blog/BlogPosts";
 import shared from "@/styles/shared.module.css";
 
@@ -33,16 +34,26 @@ export const generateMetadata = async ({
   }
 
   return {
-    title: `${post.seoTitle || post.title} | Elite Yard Hygiene`,
+    title: post.seoTitle || post.title,
     description: post.seoDescription || post.description,
+    alternates: {
+      canonical: `/blog/${post.slug}`,
+    },
     openGraph: {
       title: post.seoTitle || post.title,
       description: post.seoDescription || post.description,
       type: "article",
       url: `https://eliteyardhygiene.com/blog/${post.slug}`,
+      publishedTime: post.publishedAt,
       images: post.featuredImage?.url
         ? [{ url: post.featuredImage.url, alt: post.featuredImage.alt }]
         : [],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: post.seoTitle || post.title,
+      description: post.seoDescription || post.description,
+      images: post.featuredImage?.url ? [post.featuredImage.url] : [],
     },
   };
 };
@@ -89,8 +100,29 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     notFound();
   }
 
+  const articleSchema = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    headline: post.title,
+    description: post.description,
+    datePublished: post.publishedAt,
+    dateModified: post.publishedAt,
+    mainEntityOfPage: `https://eliteyardhygiene.com/blog/${post.slug}`,
+    publisher: {
+      "@type": "LocalBusiness",
+      name: "Elite Yard Hygiene",
+      url: "https://eliteyardhygiene.com",
+      logo: {
+        "@type": "ImageObject",
+        url: "https://eliteyardhygiene.com/icon.svg",
+      },
+    },
+    image: post.featuredImage?.url ? [post.featuredImage.url] : undefined,
+  };
+
   return (
     <main className={styles.blogPage}>
+      <StructuredData data={articleSchema} />
       <article className={styles.blogArticleSection}>
         <div className={`container ${styles.articleShell}`}>
           <Link href="/blog" className={styles.articleBack}>

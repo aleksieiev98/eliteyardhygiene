@@ -23,10 +23,29 @@ const sans = Urbanist({
 });
 
 export const metadata: Metadata = {
-  title: "Elite Yard Hygiene | Premium Pet Waste Removal",
-  description:
-    "Elite Yard Hygiene keeps residential yards fresh, clean, and ready to enjoy with recurring and one-time pet waste removal.",
   metadataBase: new URL("https://eliteyardhygiene.com"),
+  title: {
+    default: "Elite Yard Hygiene | Pet Waste Removal in Chicago Northwest Suburbs",
+    template: "%s | Elite Yard Hygiene",
+  },
+  description:
+    "Elite Yard Hygiene provides weekly and one-time dog poop cleanup for homes in Buffalo Grove, Wheeling, Palatine, Arlington Heights, Mount Prospect, Des Plaines, Schaumburg, Elk Grove Village, and Hoffman Estates.",
+  applicationName: "Elite Yard Hygiene",
+  keywords: [
+    "pet waste removal",
+    "dog poop cleanup",
+    "pooper scooper service",
+    "yard cleanup service",
+    "Buffalo Grove pet waste removal",
+    "Arlington Heights dog poop cleanup",
+  ],
+  alternates: {
+    canonical: "/",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
   openGraph: {
     title: "Elite Yard Hygiene",
     description:
@@ -34,6 +53,20 @@ export const metadata: Metadata = {
     url: "https://eliteyardhygiene.com",
     siteName: "Elite Yard Hygiene",
     type: "website",
+    locale: "en_US",
+    images: [
+      {
+        url: "/icon.svg",
+        alt: "Elite Yard Hygiene paw logo",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Elite Yard Hygiene",
+    description:
+      "Weekly and one-time pet waste removal for homes across Chicago's northwest suburbs.",
+    images: ["/icon.svg"],
   },
 };
 

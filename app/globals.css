@@ -20,6 +20,7 @@
 }
 
 html {
+  color-scheme: light;
   scroll-behavior: smooth;
   background-color: #fbfaf6;
 }
@@ -52,6 +53,20 @@ p,
 ul,
 ol {
   margin: 0 0 1rem;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+strong,
+summary,
+label,
+blockquote,
+li {
+  color: var(--text);
 }
 
 h1,
