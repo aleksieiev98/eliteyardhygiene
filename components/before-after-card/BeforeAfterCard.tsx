@@ -80,7 +80,7 @@ export const BeforeAfterCard = ({
         />
         <div
           className={styles.comparisonAfter}
-          style={{ clipPath: `inset(0 ${100 - position}% 0 0)` }}
+          style={{ clipPath: `inset(0 0 0 ${position}%)` }}
         >
           <Image
             src={after}
@@ -107,7 +107,7 @@ export const BeforeAfterCard = ({
           aria-valuemin={0}
           aria-valuemax={100}
           aria-valuenow={Math.round(position)}
-          aria-valuetext={`${Math.round(position)} percent after image visible`}
+          aria-valuetext={`${100 - Math.round(position)} percent after image visible`}
           role="slider"
         >
           <span className={styles.comparisonHandle}>

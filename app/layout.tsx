@@ -1,12 +1,13 @@
 import type { Metadata } from "next";
+import { Analytics } from "@vercel/analytics/next";
 import { Cormorant_Garamond, Urbanist } from "next/font/google";
 import type { ReactNode } from "react";
-import { Analytics } from "@vercel/analytics/next";
 
 import { QueryProvider } from "@/components/query-provider";
 import { ScrollEffects } from "@/components/scroll-effects";
 import { SiteChrome } from "@/components/site-chrome";
 
+import "./reset.css";
 import "./globals.css";
 
 const display = Cormorant_Garamond({

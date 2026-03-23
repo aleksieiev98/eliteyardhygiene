@@ -11,16 +11,24 @@ const trustPills = ["Licensed", "Reliable Weekly Service", "Pet-Friendly"];
 
 const heroImages = [
   {
-    src: "/assets/happy-dog-closeup.jpg",
-    alt: "Happy dog in a clean backyard",
+    src: "/assets/vacuum_brush_rinse_maintainance.webp",
+    alt: "Pet waste removal process including vacuuming, brushing, rinsing, and maintenance",
   },
   {
-    src: "/assets/clean-yard-service.jpg",
-    alt: "Freshly cleaned yard ready to enjoy",
+    src: "/assets/dog_yard.png",
+    alt: "Happy dog enjoying a clean yard after pet waste removal service",
   },
   {
-    src: "/assets/weekly-pet-waste-removal.jpg",
-    alt: "Weekly pet waste removal service in a backyard",
+    src: "/assets/professional.png",
+    alt: "Professional yard cleanup technician performing pet waste removal service",
+  },
+  {
+    src: "/assets/german-longhaired-pointer.jpg",
+    alt: "German Longhaired Pointer dog sitting in a clean yard after pet waste removal service",
+  },
+  {
+    src: "/assets/rzierik-dog.jpg",
+    alt: "Dog sitting in a clean yard after pet waste removal service, photo by Rzierik on Unsplash",
   },
 ];
 

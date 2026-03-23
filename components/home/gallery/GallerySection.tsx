@@ -8,22 +8,22 @@ import styles from "./styles.module.css";
 
 const comparisonCards = [
   {
-    before: "/assets/one-time-yard-cleanup.png",
-    after: "/assets/clean-yard-service.jpg",
+    before: "/assets/party_before.png",
+    after: "/assets/party_after.png",
     title: "Weekend reset for a family backyard",
     description:
       "One-time cleanup plus deodorizing to get this yard party-ready in a single visit.",
   },
   {
-    before: "/assets/dog-waste-pickup-grass.jpg",
-    after: "/assets/weekly-pet-waste-removal.jpg",
+    before: "/assets/weekly_before.png",
+    after: "/assets/weekly_after.png",
     title: "Multi-dog yard on a weekly plan",
     description:
       "Consistent recurring service keeps high-traffic grass areas cleaner, fresher, and easier to enjoy.",
   },
   {
-    before: "/assets/fall-pet-waste-cleanup.png",
-    after: "/assets/clean-backyard-lawn.jpg",
+    before: "/assets/seasonal_cleanup_before.png",
+    after: "/assets/seasonal_cleanup_after.png",
     title: "Seasonal cleanup before spring",
     description:
       "A full-property scoop and refresh to make the yard feel clean and welcoming again.",

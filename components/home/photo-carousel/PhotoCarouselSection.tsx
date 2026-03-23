@@ -7,22 +7,22 @@ import styles from "./styles.module.css";
 
 const carouselPhotos = [
   {
-    src: "/assets/happy-dog-closeup.jpg",
+    src: "/assets/fresh_yard_happy_dog.png",
     alt: "Dog relaxing in a freshly cleaned yard",
     label: "Fresh yard, happy dog",
   },
   {
-    src: "/assets/clean-backyard-lawn.jpg",
+    src: "/assets/clean-backyard-lawn.png",
     alt: "Bright green backyard after cleanup",
     label: "Weekend-ready backyard",
   },
   {
-    src: "/assets/yard-cleanup-technician.webp",
+    src: "/assets/yard-cleanup-technician.png",
     alt: "Technician cleaning a residential yard",
     label: "Handled by a pro",
   },
   {
-    src: "/assets/dog-yard-cleanup.jpg",
+    src: "/assets/dog-yard-cleanup.png",
     alt: "Clean lawn after pet waste removal service",
     label: "Ready for zoomies",
   },

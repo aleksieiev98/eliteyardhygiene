@@ -18,8 +18,8 @@ export const metadata: Metadata = {
 };
 
 const defaultFeaturedImage = {
-  url: "/assets/blog-dog-poop-pickup-frequency.webp",
-  alt: "Dog in a yard after cleanup service",
+  url: "/assets/vacuum_brush_rinse_maintainance.webp",
+  alt: "Pet waste removal process including vacuuming, brushing, rinsing, and maintenance",
 };
 
 export default async function BlogIndexPage() {
