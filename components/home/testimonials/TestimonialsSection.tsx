@@ -6,19 +6,19 @@ import styles from "./styles.module.css";
 
 const testimonials = [
   {
-    name: "Melissa R.",
+    name: "Jennifer Harrington",
     area: "Buffalo Grove",
     quote:
       "The yard looks immaculate every single week. They lock the gate, text when they're done, and make the whole thing effortless.",
   },
   {
-    name: "James T.",
+    name: "Roman Zhuravlov",
     area: "Arlington Heights",
     quote:
       "We have three dogs and two kids, so this service is a lifesaver. Elite Yard Hygiene is reliable, polite, and incredibly thorough.",
   },
   {
-    name: "Ariana P.",
+    name: "Anthony M",
     area: "Schaumburg",
     quote:
       "Booked a one-time cleanup before hosting friends and it completely changed the yard. It felt like a premium local service from start to finish.",
