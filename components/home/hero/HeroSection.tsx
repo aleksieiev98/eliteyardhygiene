@@ -7,11 +7,7 @@ import shared from "@/styles/shared.module.css";
 import { HeroImageRotator } from "./HeroImageRotator";
 import styles from "./styles.module.css";
 
-const trustPills = [
-  "Licensed & Insured",
-  "Reliable Weekly Service",
-  "Pet-Friendly",
-];
+const trustPills = ["Licensed", "Reliable Weekly Service", "Pet-Friendly"];
 
 const heroImages = [
   {
