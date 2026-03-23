@@ -72,6 +72,12 @@ export const SiteFooter = () => {
           </div>
         </div>
       </div>
+      <div className={clsx("container", styles.disclaimerRow)}>
+        <p>
+          Images on this website are for illustrative purposes only and do not
+          represent actual before-and-after customer results.
+        </p>
+      </div>
       <div className={clsx("container", styles.footerBottom)}>
         <p>© 2026 Elite Yard Hygiene. All rights reserved.</p>
         <div className={styles.footerLinks}>
