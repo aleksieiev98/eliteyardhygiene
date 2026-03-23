@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Cormorant_Garamond, Urbanist } from "next/font/google";
 import type { ReactNode } from "react";
+import { Analytics } from "@vercel/analytics/next";
 
 import { QueryProvider } from "@/components/query-provider";
 import { ScrollEffects } from "@/components/scroll-effects";
@@ -48,6 +49,7 @@ export default function RootLayout({
           <SiteChrome />
           {children}
         </QueryProvider>
+        <Analytics />
       </body>
     </html>
   );
