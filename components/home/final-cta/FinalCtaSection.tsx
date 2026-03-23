@@ -1,7 +1,6 @@
 import { clsx } from "clsx";
 import { Mail, Phone } from "lucide-react";
 
-import { QuoteForm } from "@/components/quote-form";
 import shared from "@/styles/shared.module.css";
 
 import styles from "./styles.module.css";
@@ -31,8 +30,39 @@ export const FinalCtaSection = () => {
             </a>
           </div>
         </div>
-        <div className={styles.formShell} data-reveal>
-          <QuoteForm />
+        <div className={styles.contactShell} data-reveal>
+          <div>
+            <span className={styles.contactEyebrow}>Direct contact</span>
+            <h3>Call or email us to get started.</h3>
+          </div>
+          <div className={styles.contactActions}>
+            <a
+              href="tel:2246009367"
+              className={clsx(
+                shared.button,
+                shared.buttonPrimary,
+                shared.buttonFull
+              )}
+            >
+              <Phone size={18} />
+              Call Now
+            </a>
+            <a
+              href="mailto:eliteyardhygiene@gmail.com?subject=Free%20Quote%20Request"
+              className={clsx(
+                shared.button,
+                shared.buttonSecondary,
+                shared.buttonFull
+              )}
+            >
+              <Mail size={18} />
+              Email for a Quote
+            </a>
+          </div>
+          <div className={styles.contactDetails}>
+            <span>(224) 600-9367</span>
+            <span>eliteyardhygiene@gmail.com</span>
+          </div>
         </div>
       </div>
     </section>
