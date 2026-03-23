@@ -18,7 +18,7 @@ export const SiteChrome = () => {
               <span className={styles.brandMark}>
                 <Dog size={24} />
               </span>
-              <span>
+              <span className={styles.brandText}>
                 Elite Yard Hygiene
                 <small className={styles.brandSmall}>
                   Premium pet waste removal
@@ -51,22 +51,27 @@ export const SiteChrome = () => {
               className={clsx(
                 shared.button,
                 shared.buttonSecondary,
-                styles.headerAction
+                styles.headerAction,
+                styles.headerCallAction
               )}
             >
               <Phone size={16} />
-              Call
+              <span className={styles.headerActionLabel}>Call</span>
             </a>
             <Link
               href="/#quote"
               className={clsx(
                 shared.button,
                 shared.buttonPrimary,
-                styles.headerAction
+                styles.headerAction,
+                styles.headerQuoteAction
               )}
             >
               <ClipboardList size={16} />
-              Get a Free Quote
+              <span className={styles.headerQuoteLabelDesktop}>
+                Get a Free Quote
+              </span>
+              <span className={styles.headerQuoteLabelMobile}>Quote</span>
             </Link>
           </div>
         </div>
@@ -95,7 +100,7 @@ export const SiteChrome = () => {
           href="/#quote"
           className={clsx(styles.floatingNavLink, styles.floatingNavCta)}
         >
-          Free Quote
+          Quote
         </Link>
       </nav>
     </>

@@ -16,6 +16,9 @@
 
 .comparisonImage {
   object-fit: cover;
+  -webkit-user-drag: none;
+  user-select: none;
+  pointer-events: none;
 }
 
 .comparisonAfter {
@@ -26,11 +29,22 @@
 .comparisonDivider {
   position: absolute;
   inset: 0 auto 0 50%;
-  width: 2px;
+  width: 64px;
   padding: 0;
   border: 0;
-  background: rgba(255, 255, 255, 0.96);
+  background: transparent;
   cursor: ew-resize;
+  transform: translateX(-50%);
+}
+
+.comparisonDivider::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 2px;
+  background: rgba(255, 255, 255, 0.96);
   transform: translateX(-50%);
 }
 
@@ -115,5 +129,9 @@
 @media (max-width: 760px) {
   .comparisonVisual {
     min-height: 280px;
+  }
+
+  .comparisonDivider {
+    width: 76px;
   }
 }

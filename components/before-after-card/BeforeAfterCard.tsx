@@ -75,6 +75,7 @@ export const BeforeAfterCard = ({
           src={before}
           alt={`${title} before cleanup`}
           fill
+          draggable={false}
           sizes="(max-width: 768px) 100vw, 50vw"
           className={styles.comparisonImage}
         />
@@ -86,6 +87,7 @@ export const BeforeAfterCard = ({
             src={after}
             alt={`${title} after cleanup`}
             fill
+            draggable={false}
             sizes="(max-width: 768px) 100vw, 50vw"
             className={styles.comparisonImage}
           />

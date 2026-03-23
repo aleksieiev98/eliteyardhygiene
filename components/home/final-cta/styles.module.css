@@ -7,8 +7,9 @@
 
 .panelCopy h2 {
   margin: 0;
+  margin-bottom: 1rem;
   font-family: var(--font-display), serif;
-  line-height: 0.96;
+  line-height: 0.8;
   letter-spacing: -0.03em;
   font-size: clamp(2.4rem, 5vw, 4.4rem);
 }
