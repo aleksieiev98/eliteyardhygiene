@@ -5,7 +5,7 @@ import shared from "@/styles/shared.module.css";
 
 import styles from "./styles.module.css";
 
-const areas = [
+export const serviceAreas = [
   "Buffalo Grove",
   "Wheeling",
   "Palatine",
@@ -38,7 +38,7 @@ export const ServiceAreaSection = () => {
             request and we may still be able to help.
           </p>
           <div className={styles.areaTags}>
-            {areas.map((area) => (
+            {serviceAreas.map((area) => (
               <span key={area}>{area}</span>
             ))}
           </div>

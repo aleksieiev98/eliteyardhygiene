@@ -4,7 +4,7 @@ import shared from "@/styles/shared.module.css";
 
 import styles from "./styles.module.css";
 
-const faqs = [
+export const faqs = [
   {
     question: "How often should my yard be cleaned?",
     answer:

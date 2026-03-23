@@ -6,7 +6,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = "https://eliteyardhygiene.com";
   const posts = (await getAllPosts()).map((post) => ({
     url: `${baseUrl}/blog/${post.slug}`,
-    lastModified: post.date,
+    lastModified: post.publishedAt,
     changeFrequency: "daily" as const,
     priority: 0.8,
   }));
@@ -23,6 +23,18 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       lastModified: new Date().toISOString(),
       changeFrequency: "daily",
       priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/privacy-policy`,
+      lastModified: new Date().toISOString(),
+      changeFrequency: "yearly",
+      priority: 0.2,
+    },
+    {
+      url: `${baseUrl}/terms`,
+      lastModified: new Date().toISOString(),
+      changeFrequency: "yearly",
+      priority: 0.2,
     },
     ...posts,
   ];

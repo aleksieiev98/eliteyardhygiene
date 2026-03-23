@@ -2,8 +2,8 @@ import "server-only";
 
 import {
   BLOCKS,
-  type Document,
   type Block,
+  type Document,
   type Inline,
   type Text,
 } from "@contentful/rich-text-types";
@@ -31,6 +31,7 @@ export type BlogPost = {
   title: string;
   description: string;
   date: string;
+  publishedAt: string;
   readTime: string;
   category: string;
   keywords: string[];
@@ -54,6 +55,22 @@ type ContentfulBlogPostSkeleton = EntrySkeletonType<
 >;
 
 type RichTextNode = Block | Inline | Text;
+
+const dateFormatter = new Intl.DateTimeFormat("en-US", {
+  month: "short",
+  day: "numeric",
+  year: "numeric",
+});
+
+const formatPublishDate = (value: string) => {
+  const parsedDate = new Date(value);
+
+  if (Number.isNaN(parsedDate.getTime())) {
+    return value;
+  }
+
+  return dateFormatter.format(parsedDate);
+};
 
 const mapFeaturedImage = (
   asset: Asset<undefined, string> | undefined,
@@ -135,7 +152,8 @@ const mapContentfulPost = (
     slug: entry.fields.slug,
     title: entry.fields.title,
     description,
-    date: entry.fields.publishDate,
+    date: formatPublishDate(entry.fields.publishDate),
+    publishedAt: entry.fields.publishDate,
     readTime: getReadTime(body),
     category: "Blog",
     keywords: [],
