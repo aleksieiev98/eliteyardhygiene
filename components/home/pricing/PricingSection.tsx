@@ -9,7 +9,7 @@ import styles from "./styles.module.css";
 const pricing = [
   {
     title: "One-Time Cleanup",
-    price: "$79",
+    price: "$50",
     note: "starting",
     description: "Deep cleanup for overgrown yards or event prep.",
     features: [
@@ -20,7 +20,7 @@ const pricing = [
   },
   {
     title: "Weekly Service",
-    price: "$65",
+    price: "$40",
     note: "per week",
     description: "The easy way to keep your yard fresh all season long.",
     features: [
@@ -34,7 +34,7 @@ const pricing = [
   },
   {
     title: "Twice Weekly",
-    price: "$98",
+    price: "$60",
     note: "per week",
     description: "Built for multi-dog homes and high-use backyards.",
     features: [
@@ -56,8 +56,8 @@ export const PricingSection = () => {
           <span className={shared.eyebrow}>Pricing</span>
           <h2>Clear starting prices with no guesswork.</h2>
           <p>
-            Final pricing depends on yard size, number of dogs, and service
-            frequency, but these packages give a clear starting point.
+            Final pricing depends on yard size and service frequency, but these
+            packages give a clear starting point.
           </p>
         </div>
         <div className={styles.pricingGrid}>

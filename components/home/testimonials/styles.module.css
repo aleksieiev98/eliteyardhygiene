@@ -32,6 +32,12 @@
   line-height: 1.7;
 }
 
+.testimonialCard span {
+  display: block;
+  margin-top: 0.3rem;
+  color: var(--muted);
+}
+
 .stars {
   display: flex;
   gap: 0.25rem;
