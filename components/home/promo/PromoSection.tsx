@@ -18,14 +18,14 @@ export const PromoSection = () => {
             </h2>
             <p>
               To celebrate launching Elite Yard Hygiene for the first time,
-              we’re giving early customers a <strong>first week free</strong>
-              on recurring service. It’s the easiest way to try us out with
-              less risk and see the difference right away.
+              we’re giving early customers a <strong>first week free</strong> on
+              recurring service. It’s the easiest way to try us out with less
+              risk and see the difference right away.
             </p>
           </div>
           <div className={styles.promoActions}>
             <div className={styles.promoBadge}>
-              <strong>Week 1 Free</strong>
+              <strong>First Week Free</strong>
               <span>for new recurring customers</span>
             </div>
             <Link
