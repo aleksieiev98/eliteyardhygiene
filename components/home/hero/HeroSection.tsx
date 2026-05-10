@@ -1,5 +1,5 @@
 import { clsx } from "clsx";
-import { ArrowRight, BadgeCheck, Star } from "lucide-react";
+import { ArrowRight, BadgeCheck, Mail, Phone, Star } from "lucide-react";
 import Link from "next/link";
 
 import shared from "@/styles/shared.module.css";
@@ -8,6 +8,8 @@ import { HeroImageRotator } from "./HeroImageRotator";
 import styles from "./styles.module.css";
 
 const trustPills = ["Licensed", "Reliable Weekly Service", "Pet-Friendly"];
+const phoneHref = "tel:2246009367";
+const emailHref = "mailto:eliteyardhygiene@gmail.com";
 
 const heroImages = [
   {
@@ -38,13 +40,11 @@ export const HeroSection = () => {
       <div className={clsx("container", styles.heroGrid)}>
         <div className={styles.heroCopy} data-reveal>
           <span className={shared.eyebrow}>Local Yard Cleanup Service</span>
-          <h1>
-            A cleaner yard, a happier dog, and one less thing on your list.
-          </h1>
+          <h1>Dog Waste Removal Service</h1>
           <p className={styles.heroText}>
-            Elite Yard Hygiene delivers recurring and one-time pet waste removal
-            for busy homeowners who want a yard that feels fresh, safe, and
-            ready to enjoy.
+            Elite Yard Hygiene provides weekly and one-time dog waste removal
+            for busy homeowners who want a consistently poop-free yard without
+            the hassle of scooping.
           </p>
           <div className={styles.ctaRow}>
             <Link
@@ -60,6 +60,16 @@ export const HeroSection = () => {
               View Pricing
               <ArrowRight size={16} />
             </Link>
+          </div>
+          <div className={styles.contactRow}>
+            <a href={phoneHref} className={styles.contactLink}>
+              <Phone size={16} />
+              (224) 600-9367
+            </a>
+            <a href={emailHref} className={styles.contactLink}>
+              <Mail size={16} />
+              eliteyardhygiene@gmail.com
+            </a>
           </div>
           <div className={styles.heroProofStack}>
             <div className={styles.pillRow}>
