@@ -13,8 +13,12 @@ const emailHref = "mailto:eliteyardhygiene@gmail.com";
 
 const heroImages = [
   {
-    src: "/assets/vacuum_brush_rinse_maintainance.webp",
-    alt: "Pet waste removal process including vacuuming, brushing, rinsing, and maintenance",
+    src: "/assets/tools.png",
+    alt: "Professional pet waste removal tools including pooper scooper, deodorizer, and secure gate check for reliable yard cleanup service",
+  },
+  {
+    src: "/assets/thumbs_up.png",
+    alt: "Happy dog giving a thumbs up in a clean yard after pet waste removal service",
   },
   {
     src: "/assets/dog_yard.png",

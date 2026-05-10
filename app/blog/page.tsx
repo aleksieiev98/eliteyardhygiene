@@ -27,7 +27,7 @@ export const metadata: Metadata = {
 };
 
 const defaultFeaturedImage = {
-  url: "/assets/vacuum_brush_rinse_maintainance.webp",
+  url: "/assets/thumbs_up.png",
   alt: "Pet waste removal process including vacuuming, brushing, rinsing, and maintenance",
 };
 
