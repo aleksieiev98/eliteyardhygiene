@@ -25,10 +25,6 @@ const heroImages = [
     alt: "Happy dog enjoying a clean yard after pet waste removal service",
   },
   {
-    src: "/assets/professional.png",
-    alt: "Professional yard cleanup technician performing pet waste removal service",
-  },
-  {
     src: "/assets/german-longhaired-pointer.jpg",
     alt: "German Longhaired Pointer dog sitting in a clean yard after pet waste removal service",
   },
