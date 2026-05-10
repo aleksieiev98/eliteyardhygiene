@@ -13,25 +13,26 @@ export const PromoSection = () => {
           <div className={styles.promoCopy}>
             <span className={shared.eyebrow}>Launch Promotion</span>
             <h2>
-              We’re officially going live, and our first customers get 20% off.
+              We’re officially going live, and new customers get their first
+              week free.
             </h2>
             <p>
               To celebrate launching Elite Yard Hygiene for the first time,
-              we’re giving early customers a <strong>20% discount</strong> on
-              their first service. It’s the easiest time to lock in a cleaner
-              yard and try us out with less risk.
+              we’re giving early customers a <strong>first week free</strong>
+              on recurring service. It’s the easiest way to try us out with
+              less risk and see the difference right away.
             </p>
           </div>
           <div className={styles.promoActions}>
             <div className={styles.promoBadge}>
-              <strong>-20%</strong>
-              <span>for first customers</span>
+              <strong>Week 1 Free</strong>
+              <span>for new recurring customers</span>
             </div>
             <Link
               href="#quote"
               className={clsx(shared.button, shared.buttonPrimary)}
             >
-              Claim the Launch Offer
+              Claim First Week Free
             </Link>
           </div>
         </div>
