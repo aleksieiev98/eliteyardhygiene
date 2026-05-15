@@ -9,7 +9,7 @@ import styles from "./styles.module.css";
 const pricing = [
   {
     title: "Weekly Service",
-    price: "$25",
+    price: "$17",
     note: "starting per visit",
     description: "A simple weekly plan that keeps your yard clean without the hassle.",
     features: [
@@ -22,7 +22,7 @@ const pricing = [
   },
   {
     title: "Twice Weekly",
-    price: "$20",
+    price: "$15",
     note: "starting per visit",
     description: "Our most popular option for cleaner yards and better consistency all week.",
     features: [
@@ -36,17 +36,17 @@ const pricing = [
     featured: true,
   },
   {
-    title: "3+ Weekly Visits",
-    price: "$17",
-    note: "per visit",
-    description: "Best value for the busiest yards that need the most frequent upkeep.",
+    title: "Every Two Weeks",
+    price: "$25",
+    note: "starting per visit",
+    description: "A lighter recurring option for yards that need a dependable reset on a biweekly schedule.",
     features: [
-      "Three or more visits each week",
+      "One scheduled visit every two weeks",
       "Pet-safe deodorizing",
       "Dog spot lawn treatment",
       "Visit notifications",
-      "Best for high-use yards",
-      "Lowest per-visit rate",
+      "Good fit for lighter-use yards",
+      "Recurring service without a weekly schedule",
     ],
   },
 ];
