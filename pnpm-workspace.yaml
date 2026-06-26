@@ -1,3 +1,6 @@
 allowBuilds:
   sharp: true
   unrs-resolver: true
+minimumReleaseAgeExclude:
+  - prettier@3.8.5
+  - resend@6.16.0
