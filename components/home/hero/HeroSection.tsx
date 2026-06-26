@@ -13,6 +13,14 @@ const emailHref = "mailto:eliteyardhygiene@gmail.com";
 
 const heroImages = [
   {
+    src: "/assets/hero-1.jpg",
+    alt: "Get a free first clean with Elite Yard Hygiene's professional pet waste removal service in Chicago's northwest suburbs",
+  },
+  {
+    src: "/assets/hero-2.jpg",
+    alt: "Elite Yard Hygiene pet waste removal service in action, with a professional using a pooper scooper to clean a yard",
+  },
+  {
     src: "/assets/tools.png",
     alt: "Professional pet waste removal tools including pooper scooper, deodorizer, and secure gate check for reliable yard cleanup service",
   },
@@ -23,14 +31,6 @@ const heroImages = [
   {
     src: "/assets/dog_yard.png",
     alt: "Happy dog enjoying a clean yard after pet waste removal service",
-  },
-  {
-    src: "/assets/german-longhaired-pointer.jpg",
-    alt: "German Longhaired Pointer dog sitting in a clean yard after pet waste removal service",
-  },
-  {
-    src: "/assets/rzierik-dog.jpg",
-    alt: "Dog sitting in a clean yard after pet waste removal service, photo by Rzierik on Unsplash",
   },
 ];
 
