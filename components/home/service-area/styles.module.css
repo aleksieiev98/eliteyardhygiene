@@ -22,8 +22,14 @@
 
 .areaTags {
   display: flex;
-  gap: 1rem;
+  gap: 0.6rem;
   flex-wrap: wrap;
+}
+
+@media (max-width: 760px) {
+  .areaTags {
+    gap: 0.4rem;
+  }
 }
 
 .areaTags span {
@@ -37,6 +43,54 @@
   color: var(--green-900);
   font-weight: 600;
   box-shadow: 0 8px 16px rgba(23, 49, 38, 0.04);
+}
+
+@media (max-width: 760px) {
+  .areaTags span {
+    padding: 0.6rem 0.85rem;
+    font-size: 0.9rem;
+  }
+}
+
+.notFoundMessage {
+  margin-top: 1.75rem;
+  padding: 1.25rem 1.5rem;
+  border-radius: var(--radius-lg);
+  background: rgba(23, 49, 38, 0.06);
+  border-left: 4px solid var(--green-700);
+  color: var(--green-900);
+}
+
+.notFoundMessage strong {
+  display: block;
+  margin-bottom: 0.6rem;
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--green-700);
+}
+
+.notFoundMessage p {
+  margin: 0;
+  line-height: 1.6;
+  font-size: 0.95rem;
+  color: var(--green-900);
+  text-wrap: balance;
+}
+
+@media (max-width: 760px) {
+  .notFoundMessage {
+    margin-top: 1.25rem;
+    padding: 1rem 1.25rem;
+  }
+
+  .notFoundMessage strong {
+    font-size: 0.95rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .notFoundMessage p {
+    font-size: 0.9rem;
+  }
 }
 
 .mapCard {

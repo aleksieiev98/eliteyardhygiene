@@ -30,8 +30,8 @@ export const SiteFooter = () => {
           <h4>Service Area</h4>
           <p>
             Buffalo Grove, Wheeling, Palatine, Arlington Heights, Mount
-            Prospect, Des Plaines, Schaumburg, Elk Grove Village, and Hoffman
-            Estates.
+            Prospect, Des Plaines, Schaumburg, Elk Grove Village, Hoffman
+            Estates, Lake Zurich, Vernon Hills, and Long Grove.
           </p>
         </div>
         <div>

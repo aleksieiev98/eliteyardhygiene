@@ -15,6 +15,9 @@ export const serviceAreas = [
   "Schaumburg",
   "Elk Grove Village",
   "Hoffman Estates",
+  "Lake Zurich",
+  "Vernon Hills",
+  "Long Grove",
 ];
 
 const mapEmbedUrl =
@@ -41,6 +44,10 @@ export const ServiceAreaSection = () => {
             {serviceAreas.map((area) => (
               <span key={area}>{area}</span>
             ))}
+          </div>
+          <div className={styles.notFoundMessage}>
+            <strong>Your city not listed?</strong>
+            <p>No problem! If your area is within our service zone, send a quote request and we&apos;ll take care of you.</p>
           </div>
         </div>
         <div className={styles.mapCard} data-reveal>
