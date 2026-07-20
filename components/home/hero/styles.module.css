@@ -187,6 +187,10 @@
   }
 
   .heroImageWrap {
-    min-height: 280px;
+    min-height: clamp(280px, 50vw, 420px);
+  }
+
+  .heroBadge {
+    display: none;
   }
 }
